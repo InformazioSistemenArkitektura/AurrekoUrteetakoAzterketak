@@ -1,0 +1,5437 @@
+1715967700: COMMAND <cp ./examen6 /tmp/.examen6>
+1715967700: COMMAND <cp -f /tmp/.examen6 ./examen6>
+1715967700: COMMAND <uname -a >> .trazas-6/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1715967700: COMMAND <ifconfig 2>&1 >> .trazas-6/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8135  bytes 1088512 (1.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8135  bytes 1088512 (1.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 3022992  bytes 4051862707 (4.0 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 270909  bytes 50248823 (50.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1715967700: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-6/alumno-45994891C>
+MACHINE-ID: 1715967700: COMMAND <cat /etc/machine-id >> .trazas-6/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1715967700: 
+Makina badago identifikatuta.
+1715967700: RX: <OK Accepted>
+1715967703: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1715967703: RX: <NEW>
+1715967703: 
+***************************************************
+Erabiltzaileak ez du pasahitz publikorik erregistratuta.
+Mesedez, baieztatu pasahitza alta emateko.
+[5mPasahitza hurrengo saioetarako gogoratu behar da.[0m
+Erabili karaktere pertsonal pribatuen sekuentzia bat.
+Zerbitzarian bertsio enkriptatu bat gordeko da.
+Ez bazaude ados erabili duzun pasahitzarekin
+eten prozesua eta hasi berriro erregistroa.
+Gero, zailagoa izango da aldatzea.
+Administratzailearekin harremanetan jarri beharko duzu:
+armando.ferro@ehu.eus
+***************************************************
+1715967708: TX: <CREATEPWD JAJQ02AO7zMXiA>
+1715967708: [5m
+LOGIN: Pasahitz publikoa <JAJQ02AO7zMXiA> erregistratuta.[0m
+1715967708: RX: <DONE>
+1715967708: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1715967708: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1715967708: RX: <REGISTERED>
+1715967708: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715967708: COMMAND <cp ./client.? .trazas-6>
+1715967708: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1715967708: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-17-5-19h41\n" | 	  ftp -n 2>&1 > /dev/null>
+1715967709: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1715967740: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715967740: COMMAND <ipcs -m >> .trazas-6/alumno-45994891C 2>&1>
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 98305      crash      600        524288     2          dest         
+0x00000000 32772      crash      600        393216     2          dest         
+0x00000000 32774      crash      600        524288     2          dest         
+0x00000000 196618     crash      600        524288     2          dest         
+0x00000000 196621     crash      600        4194304    2          dest         
+0x00000000 196623     crash      600        4194304    2          dest         
+0x45994891 32815      crash      666        1024       0                       
+0x00000000 98357      crash      600        524288     2          dest         
+0x00000000 98363      crash      600        524288     2          dest         
+
+1715967740: 
+-------------------------------------------------------
+0x45994891 gakodun memoria partekatutako segmentu bat existitzen da jadanik
+-------------------------------------------------------
+1715967740: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715967740: Harrera-bufferraren tamaina gaindituta (248 byte)1715967740: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715967740: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715967740: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715967741: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715967859: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715967859: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715967859: Harrera-bufferraren tamaina gaindituta (248 byte)1715967859: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715967859: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715967859: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715967860: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715967931: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715967931: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715967931: Harrera-bufferraren tamaina gaindituta (248 byte)1715967931: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715967931: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715967931: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715967932: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968001: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968001: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968001: Harrera-bufferraren tamaina gaindituta (248 byte)1715968001: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968001: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968001: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968002: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968112: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715968112: COMMAND <cp ./client.? .trazas-6>
+1715968112: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1715968112: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-17-5-19h41\n" | 	  ftp -n 2>&1 > /dev/null>
+1715968113: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1715968117: COMMAND <cp ./examen6 /tmp/.examen6>
+1715968117: COMMAND <cp -f /tmp/.examen6 ./examen6>
+1715968117: COMMAND <uname -a >> .trazas-6/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1715968117: COMMAND <ifconfig 2>&1 >> .trazas-6/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8272  bytes 1102206 (1.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8272  bytes 1102206 (1.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 3033268  bytes 4063784729 (4.0 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 273294  bytes 50785907 (50.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1715968117: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-6/alumno-45994891C>
+MACHINE-ID: 1715968117: COMMAND <cat /etc/machine-id >> .trazas-6/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1715968117: 
+Makina badago identifikatuta.
+1715968117: RX: <OK Accepted>
+1715968117: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1715968117: RX: <OK>
+1715968117: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1715968117: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1715968117: RX: <REGISTERED>
+1715968117: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715968118: COMMAND <cp ./client.? .trazas-6>
+1715968118: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1715968118: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-17-5-19h48\n" | 	  ftp -n 2>&1 > /dev/null>
+1715968118: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1715968134: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968134: COMMAND <ipcs -m >> .trazas-6/alumno-45994891C 2>&1>
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 98305      crash      600        524288     2          dest         
+0x00000000 32772      crash      600        393216     2          dest         
+0x00000000 32774      crash      600        524288     2          dest         
+0x00000000 196618     crash      600        524288     2          dest         
+0x00000000 196621     crash      600        4194304    2          dest         
+0x00000000 196623     crash      600        4194304    2          dest         
+0x45994891 32815      crash      666        1024       0                       
+0x00000000 98357      crash      600        524288     2          dest         
+0x00000000 98363      crash      600        524288     2          dest         
+
+1715968134: 
+-------------------------------------------------------
+0x45994891 gakodun memoria partekatutako segmentu bat existitzen da jadanik
+-------------------------------------------------------
+1715968134: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968139: 
+-----------------------------------------------
+RX(dev=1280066888):
+<O 52352 DEV-1>
+-----------------------------------------------
+1715968139: 
+-------------------------------------------------------
+TX (dev=1280066888)
+<ERR Event not defined
+>
+
+-------------------------------------------------------
+1715968154: Harrera-bufferraren tamaina gaindituta (248 byte)1715968154: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968154: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968154: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968155: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968430: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968430: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1715968430: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968438: 
+-----------------------------------------------
+RX(dev=1280066888):
+<O 52505 DEV-1>
+-----------------------------------------------
+1715968438: 
+-------------------------------------------------------
+TX (dev=1280066888)
+<ERR Event not defined
+>
+
+-------------------------------------------------------
+1715968453: Harrera-bufferraren tamaina gaindituta (248 byte)1715968453: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968453: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968453: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968454: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968512: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968512: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1715968512: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968512: 
+-----------------------------------------------
+RX(dev=52597):
+<HELLO 52597 DEV-1>
+-----------------------------------------------
+1715968513: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <1>. GAKOA <295> da.
+********************************************[0m
+1715968513: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1715968513: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <2>. GAKOA <360> da.
+********************************************[0m
+1715968513: 
+-------------------------------------------------------
+TX (dev=52597)
+<OK
+>
+
+-------------------------------------------------------
+1715968513: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1715968513: 
+-------------------------------------------------------
+/tmp/fifo-52597 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1715968515: 
+-------------------------------------------------------
+Arazoak daude /tmp/fifo-52597 FIFOrekin 52597 gailuan
+
+-------------------------------------------------------
+1715968515: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1715968530: Harrera-bufferraren tamaina gaindituta (248 byte)1715968530: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968530: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968530: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968531: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+1715968679: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715968679: COMMAND <cp ./client.? .trazas-6>
+1715968679: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1715968679: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-17-5-19h48\n" | 	  ftp -n 2>&1 > /dev/null>
+1715968680: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1715968694: COMMAND <cp ./examen6 /tmp/.examen6>
+1715968694: COMMAND <cp -f /tmp/.examen6 ./examen6>
+1715968694: COMMAND <uname -a >> .trazas-6/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1715968694: COMMAND <ifconfig 2>&1 >> .trazas-6/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8322  bytes 1108034 (1.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8322  bytes 1108034 (1.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 3036764  bytes 4066225474 (4.0 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 274217  bytes 51045092 (51.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1715968694: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-6/alumno-45994891C>
+MACHINE-ID: 1715968694: COMMAND <cat /etc/machine-id >> .trazas-6/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1715968694: 
+Makina badago identifikatuta.
+1715968694: RX: <OK Accepted>
+1715968694: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1715968694: RX: <OK>
+1715968694: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1715968694: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1715968694: RX: <REGISTERED>
+1715968694: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715968694: COMMAND <cp ./client.? .trazas-6>
+1715968694: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1715968694: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-17-5-19h58\n" | 	  ftp -n 2>&1 > /dev/null>
+1715968694: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1715968704: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968704: COMMAND <ipcs -m >> .trazas-6/alumno-45994891C 2>&1>
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 98305      crash      600        524288     2          dest         
+0x00000000 32772      crash      600        393216     2          dest         
+0x00000000 32774      crash      600        524288     2          dest         
+0x00000000 196618     crash      600        524288     2          dest         
+0x00000000 196621     crash      600        4194304    2          dest         
+0x00000000 196623     crash      600        4194304    2          dest         
+0x45994891 32815      crash      666        1024       0                       
+0x00000000 98357      crash      600        524288     2          dest         
+0x00000000 98363      crash      600        524288     2          dest         
+
+1715968704: 
+-------------------------------------------------------
+0x45994891 gakodun memoria partekatutako segmentu bat existitzen da jadanik
+-------------------------------------------------------
+1715968704: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968706: 
+-----------------------------------------------
+RX(dev=52848):
+<HELLO 52848 DEV-1>
+-----------------------------------------------
+1715968707: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <1>. GAKOA <295> da.
+********************************************[0m
+1715968707: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1715968707: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <2>. GAKOA <360> da.
+********************************************[0m
+1715968707: 
+-------------------------------------------------------
+TX (dev=52848)
+<OK
+>
+
+-------------------------------------------------------
+1715968707: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1715968707: 
+-------------------------------------------------------
+/tmp/fifo-52848 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1715968709: 
+-------------------------------------------------------
+Arazoak daude /tmp/fifo-52848 FIFOrekin 52848 gailuan
+
+-------------------------------------------------------
+1715968709: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1715968724: Harrera-bufferraren tamaina gaindituta (248 byte)1715968724: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968724: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968724: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+crash    pts/2        2024-05-17 19:58
+1715968725: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+crash    pts/2        2024-05-17 19:58
+1715968827: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968827: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1715968827: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968828: 
+-----------------------------------------------
+RX(dev=53074):
+<HELLO 53074 DEV-1>
+-----------------------------------------------
+1715968829: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1715968829: 
+-------------------------------------------------------
+TX (dev=53074)
+<OK
+>
+
+-------------------------------------------------------
+1715968829: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1715968829: 
+-------------------------------------------------------
+/tmp/fifo-53074 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1715968831: 
+-------------------------------------------------------
+Arazoak daude /tmp/fifo-53074 FIFOrekin 53074 gailuan
+
+-------------------------------------------------------
+1715968831: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1715968846: Harrera-bufferraren tamaina gaindituta (248 byte)1715968846: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968846: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968846: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+crash    pts/2        2024-05-17 19:58
+1715968847: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+crash    pts/2        2024-05-17 19:58
+1715968858: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715968858: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1715968858: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1715968861: 
+-----------------------------------------------
+RX(dev=53096):
+<HELLO 53096 DEV-1>
+-----------------------------------------------
+1715968862: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1715968862: 
+-------------------------------------------------------
+TX (dev=53096)
+<OK
+>
+
+-------------------------------------------------------
+1715968862: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1715968862: 
+-------------------------------------------------------
+/tmp/fifo-53096 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1715968864: 
+-------------------------------------------------------
+Arazoak daude /tmp/fifo-53096 FIFOrekin 53096 gailuan
+
+-------------------------------------------------------
+1715968864: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1715968879: Harrera-bufferraren tamaina gaindituta (248 byte)1715968879: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1715968879: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715968879: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+crash    pts/2        2024-05-17 19:58
+1715968880: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-17 09:38 (login screen)
+crash    :1           2024-05-17 09:38 (:1)
+crash    pts/2        2024-05-17 19:58
+1715968888: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715968888: COMMAND <cp ./client.? .trazas-6>
+1715968888: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1715968888: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-17-5-19h58\n" | 	  ftp -n 2>&1 > /dev/null>
+1715968889: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1716036976: COMMAND <cp ./examen6 /tmp/.examen6>
+1716036976: COMMAND <cp -f /tmp/.examen6 ./examen6>
+1716036976: COMMAND <uname -a >> .trazas-6/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1716036976: COMMAND <ifconfig 2>&1 >> .trazas-6/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 127849  bytes 22110268 (22.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 127849  bytes 22110268 (22.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 1219016  bytes 1648933469 (1.6 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 129037  bytes 21905024 (21.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1716036976: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-6/alumno-45994891C>
+MACHINE-ID: 1716036976: COMMAND <cat /etc/machine-id >> .trazas-6/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1716036976: 
+Makina badago identifikatuta.
+1716036976: RX: <OK Accepted>
+1716036978: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1716036978: RX: <OK>
+1716036978: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1716036978: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1716036978: RX: <REGISTERED>
+1716036978: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1716036978: COMMAND <cp ./client.? .trazas-6>
+1716036978: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1716036978: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-18-5-14h56\n" | 	  ftp -n 2>&1 > /dev/null>
+1716036979: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1716036997: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716036997: COMMAND <ipcs -m >> .trazas-6/alumno-45994891C 2>&1>
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 65537      crash      600        524288     2          dest         
+0x00000000 65544      crash      606        11859168   2          dest         
+0x00000000 65545      crash      606        11859168   2          dest         
+0x00000000 65546      crash      606        10230120   2          dest         
+0x00000000 65547      crash      606        10230120   2          dest         
+0x00000000 65548      crash      606        327120     2          dest         
+0x00000000 65549      crash      606        327120     2          dest         
+0x00000000 65550      crash      606        264936     2          dest         
+0x00000000 65551      crash      606        264936     2          dest         
+0x00000000 65552      crash      606        323190     2          dest         
+0x00000000 65553      crash      606        323190     2          dest         
+0x00000000 65554      crash      606        297432     2          dest         
+0x00000000 65555      crash      606        297432     2          dest         
+0x00000000 65556      crash      606        256710     2          dest         
+0x00000000 65557      crash      606        256710     2          dest         
+0x00000000 65558      crash      606        272610     2          dest         
+0x00000000 65559      crash      606        272610     2          dest         
+0x00000000 65560      crash      606        328410     2          dest         
+0x00000000 65561      crash      606        328410     2          dest         
+0x00000000 65562      crash      606        60000      2          dest         
+0x00000000 65563      crash      606        60000      2          dest         
+0x00000000 65564      crash      606        160380     2          dest         
+0x00000000 65565      crash      606        160380     2          dest         
+0x00000000 65566      crash      606        103950     2          dest         
+0x00000000 65567      crash      606        103950     2          dest         
+0x00000000 65568      crash      606        193248     2          dest         
+0x00000000 65569      crash      606        193248     2          dest         
+0x00000000 65574      crash      600        524288     2          dest         
+0x00000000 32811      crash      600        524288     2          dest         
+0x00000000 65582      crash      600        4194304    2          dest         
+0x00000000 32830      crash      600        524288     2          dest         
+
+1716036997: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037012: Harrera-bufferraren tamaina gaindituta (248 byte)1716037012: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037012: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1716037012: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037013: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037075: COMMAND <cp ./examen6 /tmp/.examen6>
+1716037075: COMMAND <cp -f /tmp/.examen6 ./examen6>
+1716037075: COMMAND <uname -a >> .trazas-6/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1716037075: COMMAND <ifconfig 2>&1 >> .trazas-6/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 127929  bytes 22116961 (22.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 127929  bytes 22116961 (22.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 1219457  bytes 1649003197 (1.6 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 129215  bytes 21936985 (21.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1716037075: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-6/alumno-45994891C>
+MACHINE-ID: 1716037075: COMMAND <cat /etc/machine-id >> .trazas-6/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1716037075: 
+Makina badago identifikatuta.
+1716037075: RX: <OK Accepted>
+1716037075: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1716037075: RX: <OK>
+1716037075: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1716037075: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1716037075: RX: <REGISTERED>
+1716037075: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1716037075: COMMAND <cp ./client.? .trazas-6>
+1716037075: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1716037075: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-18-5-14h57\n" | 	  ftp -n 2>&1 > /dev/null>
+1716037076: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>
+1716037086: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037086: COMMAND <ipcs -m >> .trazas-6/alumno-45994891C 2>&1>
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 65537      crash      600        524288     2          dest         
+0x00000000 65544      crash      606        11859168   2          dest         
+0x00000000 65545      crash      606        11859168   2          dest         
+0x00000000 65546      crash      606        10230120   2          dest         
+0x00000000 65547      crash      606        10230120   2          dest         
+0x00000000 65548      crash      606        327120     2          dest         
+0x00000000 65549      crash      606        327120     2          dest         
+0x00000000 65550      crash      606        264936     2          dest         
+0x00000000 65551      crash      606        264936     2          dest         
+0x00000000 65552      crash      606        323190     2          dest         
+0x00000000 65553      crash      606        323190     2          dest         
+0x00000000 65554      crash      606        297432     2          dest         
+0x00000000 65555      crash      606        297432     2          dest         
+0x00000000 65556      crash      606        256710     2          dest         
+0x00000000 65557      crash      606        256710     2          dest         
+0x00000000 65558      crash      606        272610     2          dest         
+0x00000000 65559      crash      606        272610     2          dest         
+0x00000000 65560      crash      606        328410     2          dest         
+0x00000000 65561      crash      606        328410     2          dest         
+0x00000000 65562      crash      606        60000      2          dest         
+0x00000000 65563      crash      606        60000      2          dest         
+0x00000000 65564      crash      606        160380     2          dest         
+0x00000000 65565      crash      606        160380     2          dest         
+0x00000000 65566      crash      606        103950     2          dest         
+0x00000000 65567      crash      606        103950     2          dest         
+0x00000000 65568      crash      606        193248     2          dest         
+0x00000000 65569      crash      606        193248     2          dest         
+0x00000000 65574      crash      600        524288     2          dest         
+0x00000000 32811      crash      600        524288     2          dest         
+0x00000000 65582      crash      600        4194304    2          dest         
+0x00000000 32830      crash      600        524288     2          dest         
+
+1716037086: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037101: Harrera-bufferraren tamaina gaindituta (248 byte)1716037101: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037101: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1716037101: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037102: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037227: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037227: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037242: Harrera-bufferraren tamaina gaindituta (248 byte)1716037242: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037242: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1716037242: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037243: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037309: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037309: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037311: 
+-----------------------------------------------
+RX(dev=21168):
+<HELLO 21168 DEV-1>
+-----------------------------------------------
+1716037312: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <1>. GAKOA <295> da.
+********************************************[0m
+1716037312: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037312: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <2>. GAKOA <360> da.
+********************************************[0m
+1716037312: 
+-------------------------------------------------------
+TX (dev=21168)
+<OK
+>
+
+-------------------------------------------------------
+1716037312: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037312: 
+-------------------------------------------------------
+/tmp/fifo-21168 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037312: 
+-------------------------------------------------------
+ /tmp/fifo-21168 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037312: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <3>. GAKOA <557> da.
+********************************************[0m
+1716037312: 
+-------------------------------------------------------
+21168 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037312: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037327: Harrera-bufferraren tamaina gaindituta (248 byte)1716037327: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037327: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1716037327: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037328: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037512: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037512: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716037512: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037514: 
+-----------------------------------------------
+RX(dev=21294):
+<HELLO 21294 DEV-1>
+-----------------------------------------------
+1716037515: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037515: 
+-------------------------------------------------------
+TX (dev=21294)
+<OK
+>
+
+-------------------------------------------------------
+1716037515: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037515: 
+-------------------------------------------------------
+/tmp/fifo-21294 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037515: 
+-------------------------------------------------------
+ /tmp/fifo-21294 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037515: 
+-------------------------------------------------------
+21294 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037515: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037530: Harrera-bufferraren tamaina gaindituta (248 byte)1716037530: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037530: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1716037530: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037531: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037603: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037603: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716037603: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037607: 
+-----------------------------------------------
+RX(dev=21412):
+<HELLO 21412 DEV-1>
+-----------------------------------------------
+1716037608: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037608: 
+-------------------------------------------------------
+TX (dev=21412)
+<OK
+>
+
+-------------------------------------------------------
+1716037608: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037608: 
+-------------------------------------------------------
+/tmp/fifo-21412 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037608: 
+-------------------------------------------------------
+ /tmp/fifo-21412 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037608: 
+-------------------------------------------------------
+21412 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037608: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037623: Harrera-bufferraren tamaina gaindituta (248 byte)1716037623: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037623: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1716037623: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037624: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037646: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037646: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716037646: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037647: 
+-----------------------------------------------
+RX(dev=21547):
+<HELLO 21547 DEV-1>
+-----------------------------------------------
+1716037648: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037648: 
+-------------------------------------------------------
+TX (dev=21547)
+<OK
+>
+
+-------------------------------------------------------
+1716037648: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037648: 
+-------------------------------------------------------
+/tmp/fifo-21547 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037648: 
+-------------------------------------------------------
+ /tmp/fifo-21547 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037648: 
+-------------------------------------------------------
+21547 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037648: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037648: 
+-----------------------------------------------
+RX(dev=21547):
+<BYE>
+-----------------------------------------------
+1716037649: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037649: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <4>. GAKOA <526> da.
+********************************************[0m
+1716037649: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716037649: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716037649: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037649: 
+*************************************************
+:ok> 1 ariketaren testuingurua prest.
+*************************************************
+1716037649: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037650: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037693: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037693: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716037693: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037695: 
+-----------------------------------------------
+RX(dev=21594):
+<HELLO 21594 DEV-1>
+-----------------------------------------------
+1716037696: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037696: 
+-------------------------------------------------------
+TX (dev=21594)
+<OK
+>
+
+-------------------------------------------------------
+1716037696: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037696: 
+-------------------------------------------------------
+/tmp/fifo-21594 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037696: 
+-------------------------------------------------------
+ /tmp/fifo-21594 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037696: 
+-------------------------------------------------------
+21594 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037696: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037696: 
+-----------------------------------------------
+RX(dev=21594):
+<BYE>
+-----------------------------------------------
+1716037697: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037697: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716037697: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716037697: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037697: 
+*************************************************
+:ok> 1 ariketaren testuingurua prest.
+*************************************************
+1716037697: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037698: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037735: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037735: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716037735: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037737: 
+-----------------------------------------------
+RX(dev=21638):
+<HELLO 21638 DEV-1>
+-----------------------------------------------
+1716037738: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037738: 
+-------------------------------------------------------
+TX (dev=21638)
+<OK
+>
+
+-------------------------------------------------------
+1716037738: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037738: 
+-------------------------------------------------------
+/tmp/fifo-21638 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037738: 
+-------------------------------------------------------
+ /tmp/fifo-21638 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037738: 
+-------------------------------------------------------
+21638 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037738: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037738: 
+-----------------------------------------------
+RX(dev=21638):
+<BYE>
+-----------------------------------------------
+1716037739: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037739: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716037739: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716037739: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037739: 
+*************************************************
+:ok> 1 ariketaren testuingurua prest.
+*************************************************
+1716037739: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037740: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037823: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037823: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037824: 
+-----------------------------------------------
+RX(dev=21723):
+<HELLO 21723 DEV-1>
+-----------------------------------------------
+1716037825: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037825: 
+-------------------------------------------------------
+TX (dev=21723)
+<OK
+>
+
+-------------------------------------------------------
+1716037825: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037825: 
+-------------------------------------------------------
+/tmp/fifo-21723 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037825: 
+-------------------------------------------------------
+ /tmp/fifo-21723 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037825: 
+-------------------------------------------------------
+21723 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037825: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037825: 
+-----------------------------------------------
+RX(dev=21723):
+<BYE>
+-----------------------------------------------
+1716037826: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037826: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716037826: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716037826: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037826: 
+*************************************************
+:ok> 1 ariketaren testuingurua prest.
+*************************************************
+1716037826: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037827: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037872: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716037872: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716037872: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716037873: 
+-----------------------------------------------
+RX(dev=21830):
+<HELLO 21830 DEV-1>
+-----------------------------------------------
+1716037874: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037874: 
+-------------------------------------------------------
+TX (dev=21830)
+<OK
+>
+
+-------------------------------------------------------
+1716037874: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716037874: 
+-------------------------------------------------------
+/tmp/fifo-21830 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716037874: 
+-------------------------------------------------------
+ /tmp/fifo-21830 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716037874: 
+-------------------------------------------------------
+21830 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716037874: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716037874: 
+-----------------------------------------------
+RX(dev=21830):
+<BYE>
+-----------------------------------------------
+1716037875: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716037875: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716037875: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716037875: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716037875: 
+*************************************************
+:ok> 1 ariketaren testuingurua prest.
+*************************************************
+1716037875: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716037876: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039164: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716039164: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716039179: Harrera-bufferraren tamaina gaindituta (248 byte)1716039179: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039194: Harrera-bufferraren tamaina gaindituta (248 byte)1716039194: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039194: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716039194: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039195: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039316: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716039316: 
+-------------------------------------------------------
+1 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716039316: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716039317: 
+-----------------------------------------------
+RX(dev=24304):
+<HELLO 24304 DEV-1>
+-----------------------------------------------
+1716039318: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716039318: 
+-------------------------------------------------------
+TX (dev=24304)
+<OK
+>
+
+-------------------------------------------------------
+1716039318: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716039318: 
+-------------------------------------------------------
+/tmp/fifo-24304 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716039318: 
+-------------------------------------------------------
+ /tmp/fifo-24304 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716039318: 
+-------------------------------------------------------
+24304 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716039318: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716039333: Harrera-bufferraren tamaina gaindituta (248 byte)1716039333: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039348: Harrera-bufferraren tamaina gaindituta (248 byte)1716039348: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039348: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716039348: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039349: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039403: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716039403: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716039404: 
+-----------------------------------------------
+RX(dev=24401):
+<HELLO 24401 DEV-1>
+-----------------------------------------------
+1716039405: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716039405: 
+-------------------------------------------------------
+TX (dev=24401)
+<OK
+>
+
+-------------------------------------------------------
+1716039405: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716039405: 
+-------------------------------------------------------
+/tmp/fifo-24401 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716039405: 
+-------------------------------------------------------
+ /tmp/fifo-24401 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716039405: 
+-------------------------------------------------------
+24401 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716039405: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716039420: Harrera-bufferraren tamaina gaindituta (248 byte)1716039420: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039435: Harrera-bufferraren tamaina gaindituta (248 byte)1716039435: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039435: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716039435: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039436: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039466: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716039466: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716039467: 
+-----------------------------------------------
+RX(dev=24532):
+<HELLO 24532 DEV-1>
+-----------------------------------------------
+1716039468: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716039468: 
+-------------------------------------------------------
+TX (dev=24532)
+<OK
+>
+
+-------------------------------------------------------
+1716039468: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716039468: 
+-------------------------------------------------------
+/tmp/fifo-24532 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716039468: 
+-------------------------------------------------------
+ /tmp/fifo-24532 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716039468: 
+-------------------------------------------------------
+24532 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716039468: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716039483: Harrera-bufferraren tamaina gaindituta (248 byte)1716039483: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039498: Harrera-bufferraren tamaina gaindituta (248 byte)1716039498: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039498: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716039498: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039499: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039868: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716039868: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716039870: 
+-----------------------------------------------
+RX(dev=25037):
+<HELLO 25037 DEV-1>
+-----------------------------------------------
+1716039871: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716039871: 
+-------------------------------------------------------
+TX (dev=25037)
+<OK
+>
+
+-------------------------------------------------------
+1716039871: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716039871: 
+-------------------------------------------------------
+/tmp/fifo-25037 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716039871: 
+-------------------------------------------------------
+ /tmp/fifo-25037 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716039871: 
+-------------------------------------------------------
+25037 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716039871: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716039886: Harrera-bufferraren tamaina gaindituta (248 byte)1716039886: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039901: Harrera-bufferraren tamaina gaindituta (248 byte)1716039901: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716039901: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716039901: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716039902: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716040027: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716040027: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716040027: 
+-----------------------------------------------
+RX(dev=25314):
+<HELLO 25314 DEV-1>
+-----------------------------------------------
+1716040028: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716040028: 
+-------------------------------------------------------
+TX (dev=25314)
+<OK
+>
+
+-------------------------------------------------------
+1716040028: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716040028: 
+-------------------------------------------------------
+/tmp/fifo-25314 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716040028: 
+-------------------------------------------------------
+ /tmp/fifo-25314 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716040028: 
+-------------------------------------------------------
+25314 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716040028: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716040043: Harrera-bufferraren tamaina gaindituta (248 byte)1716040043: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716040058: Harrera-bufferraren tamaina gaindituta (248 byte)1716040058: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716040058: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716040058: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716040059: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716040063: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716040063: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716040064: 
+-----------------------------------------------
+RX(dev=25338):
+<HELLO 25338 DEV-1>
+-----------------------------------------------
+1716040065: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716040065: 
+-------------------------------------------------------
+TX (dev=25338)
+<OK
+>
+
+-------------------------------------------------------
+1716040065: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716040065: 
+-------------------------------------------------------
+/tmp/fifo-25338 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716040065: 
+-------------------------------------------------------
+ /tmp/fifo-25338 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716040065: 
+-------------------------------------------------------
+25338 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716040065: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716040080: Harrera-bufferraren tamaina gaindituta (248 byte)1716040080: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716040095: Harrera-bufferraren tamaina gaindituta (248 byte)1716040095: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716040095: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716040095: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716040096: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041443: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041443: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041445: 
+-----------------------------------------------
+RX(dev=28561):
+<HELLO 28561 DEV-1>
+-----------------------------------------------
+1716041446: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041446: 
+-------------------------------------------------------
+TX (dev=28561)
+<OK
+>
+
+-------------------------------------------------------
+1716041446: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041446: 
+-------------------------------------------------------
+/tmp/fifo-28561 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041446: 
+-------------------------------------------------------
+ /tmp/fifo-28561 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041446: 
+-------------------------------------------------------
+28561 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041446: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041446: 
+-----------------------------------------------
+RX(dev=28561):
+<SPEED -1432481792.000000>
+-----------------------------------------------
+1716041447: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=-1432481792.00
+
+-------------------------------------------------------
+1716041447: 
+-------------------------------------------------------
+TX (dev=28561)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041447: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041447: 
+-------------------------------------------------------
+28561 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041447: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041447: 
+-----------------------------------------------
+RX(dev=28561):
+<RPM -1432481792>
+-----------------------------------------------
+1716041448: 
+-------------------------------------------------------
+RPM=-1432481792 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041448: 
+-------------------------------------------------------
+TX (dev=28561)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041448: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041448: 
+-------------------------------------------------------
+28561 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041449: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041449: 
+-----------------------------------------------
+RX(dev=28561):
+<RPM -1432481792>
+-----------------------------------------------
+1716041450: 
+-------------------------------------------------------
+TX (dev=28561)
+<OK Forced response (ERR Command RPM not expected
+)
+>
+
+-------------------------------------------------------
+1716041450: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041465: Harrera-bufferraren tamaina gaindituta (248 byte)1716041465: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041465: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041465: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041466: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041559: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041559: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041559: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041560: 
+-----------------------------------------------
+RX(dev=28679):
+<HELLO 28679 DEV-1>
+-----------------------------------------------
+1716041561: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041561: 
+-------------------------------------------------------
+TX (dev=28679)
+<OK
+>
+
+-------------------------------------------------------
+1716041561: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041561: 
+-------------------------------------------------------
+/tmp/fifo-28679 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041561: 
+-------------------------------------------------------
+ /tmp/fifo-28679 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041561: 
+-------------------------------------------------------
+28679 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041561: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041561: 
+-----------------------------------------------
+RX(dev=28679):
+<SPEED 411138816.000000>
+-----------------------------------------------
+1716041562: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=411138816.00
+
+-------------------------------------------------------
+1716041562: 
+-------------------------------------------------------
+TX (dev=28679)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041562: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041562: 
+-------------------------------------------------------
+28679 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041562: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041562: 
+-----------------------------------------------
+RX(dev=28679):
+<RPM 411138802>
+-----------------------------------------------
+1716041563: 
+-------------------------------------------------------
+RPM=411138802 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041563: 
+-------------------------------------------------------
+TX (dev=28679)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041563: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041563: 
+-------------------------------------------------------
+28679 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041564: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041564: 
+-----------------------------------------------
+RX(dev=28679):
+<SEM -226852584>
+-----------------------------------------------
+1716041565: 
+-------------------------------------------------------
+TX (dev=28679)
+<OK Forced response (ERR bad SEM format
+)
+>
+
+-------------------------------------------------------
+1716041565: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041565: 
+-------------------------------------------------------
+28679 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041565: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041565: 
+-----------------------------------------------
+RX(dev=28679):
+<BYE>
+-----------------------------------------------
+1716041566: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041566: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041566: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041566: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041581: Harrera-bufferraren tamaina gaindituta (248 byte)1716041581: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041581: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041581: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041582: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041628: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041628: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041628: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041632: 
+-----------------------------------------------
+RX(dev=28804):
+<HELLO 28804 DEV-1>
+-----------------------------------------------
+1716041633: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041633: 
+-------------------------------------------------------
+TX (dev=28804)
+<OK
+>
+
+-------------------------------------------------------
+1716041633: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041633: 
+-------------------------------------------------------
+/tmp/fifo-28804 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041633: 
+-------------------------------------------------------
+ /tmp/fifo-28804 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041633: 
+-------------------------------------------------------
+28804 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041633: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041633: 
+-----------------------------------------------
+RX(dev=28804):
+<SPEED -797669760.000000>
+-----------------------------------------------
+1716041634: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=-797669760.00
+
+-------------------------------------------------------
+1716041634: 
+-------------------------------------------------------
+TX (dev=28804)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041634: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041634: 
+-------------------------------------------------------
+28804 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041634: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041634: 
+-----------------------------------------------
+RX(dev=28804):
+<RPM 0>
+-----------------------------------------------
+1716041635: 
+-------------------------------------------------------
+RPM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041635: 
+-------------------------------------------------------
+TX (dev=28804)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041635: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041635: 
+-------------------------------------------------------
+28804 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041636: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041636: 
+-----------------------------------------------
+RX(dev=28804):
+<SEM -1819904816>
+-----------------------------------------------
+1716041637: 
+-------------------------------------------------------
+TX (dev=28804)
+<OK Forced response (ERR bad SEM format
+)
+>
+
+-------------------------------------------------------
+1716041637: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041637: 
+-------------------------------------------------------
+28804 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041637: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041637: 
+-----------------------------------------------
+RX(dev=28804):
+<BYE>
+-----------------------------------------------
+1716041638: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041638: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041638: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041638: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041653: Harrera-bufferraren tamaina gaindituta (248 byte)1716041653: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041653: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041653: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041654: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041688: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041688: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041688: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041692: 
+-----------------------------------------------
+RX(dev=28904):
+<HELLO 28904 DEV-1>
+-----------------------------------------------
+1716041693: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041693: 
+-------------------------------------------------------
+TX (dev=28904)
+<OK
+>
+
+-------------------------------------------------------
+1716041693: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041693: 
+-------------------------------------------------------
+/tmp/fifo-28904 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041693: 
+-------------------------------------------------------
+ /tmp/fifo-28904 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041693: 
+-------------------------------------------------------
+28904 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041693: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041693: 
+-----------------------------------------------
+RX(dev=28904):
+<SPEED -1594308608.000000>
+-----------------------------------------------
+1716041694: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=-1594308608.00
+
+-------------------------------------------------------
+1716041694: 
+-------------------------------------------------------
+TX (dev=28904)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041694: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041694: 
+-------------------------------------------------------
+28904 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041694: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041694: 
+-----------------------------------------------
+RX(dev=28904):
+<RPM 0>
+-----------------------------------------------
+1716041695: 
+-------------------------------------------------------
+RPM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041695: 
+-------------------------------------------------------
+TX (dev=28904)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041695: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041695: 
+-------------------------------------------------------
+28904 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041696: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041696: 
+-----------------------------------------------
+RX(dev=28904):
+<SEM -121112416 0>
+-----------------------------------------------
+1716041697: 
+-------------------------------------------------------
+TX (dev=28904)
+<OK Forced response (ERR bad SEM number or value out of range
+)
+>
+
+-------------------------------------------------------
+1716041697: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041697: 
+-------------------------------------------------------
+28904 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041697: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041697: 
+-----------------------------------------------
+RX(dev=28904):
+<BYE>
+-----------------------------------------------
+1716041698: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041698: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041698: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041698: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041713: Harrera-bufferraren tamaina gaindituta (248 byte)1716041713: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041713: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041713: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041714: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041869: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041869: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041869: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041870: 
+-----------------------------------------------
+RX(dev=29139):
+<HELLO 29139 DEV-1>
+-----------------------------------------------
+1716041871: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041871: 
+-------------------------------------------------------
+TX (dev=29139)
+<OK
+>
+
+-------------------------------------------------------
+1716041871: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041871: 
+-------------------------------------------------------
+/tmp/fifo-29139 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041871: 
+-------------------------------------------------------
+ /tmp/fifo-29139 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041871: 
+-------------------------------------------------------
+29139 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041871: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041871: 
+-----------------------------------------------
+RX(dev=29139):
+<SPEED 265786032.000000>
+-----------------------------------------------
+1716041872: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=265786032.00
+
+-------------------------------------------------------
+1716041872: 
+-------------------------------------------------------
+TX (dev=29139)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041872: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041872: 
+-------------------------------------------------------
+29139 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041872: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041872: 
+-----------------------------------------------
+RX(dev=29139):
+<RPM 0>
+-----------------------------------------------
+1716041873: 
+-------------------------------------------------------
+RPM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041873: 
+-------------------------------------------------------
+TX (dev=29139)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041873: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041873: 
+-------------------------------------------------------
+29139 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041874: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041874: 
+-----------------------------------------------
+RX(dev=29139):
+<SEM -1298999537 0>
+-----------------------------------------------
+1716041875: 
+-------------------------------------------------------
+TX (dev=29139)
+<OK Forced response (ERR bad SEM number or value out of range
+)
+>
+
+-------------------------------------------------------
+1716041875: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041875: 
+-------------------------------------------------------
+29139 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041875: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041875: 
+-----------------------------------------------
+RX(dev=29139):
+<BYE>
+-----------------------------------------------
+1716041876: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041876: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041876: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041876: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041891: Harrera-bufferraren tamaina gaindituta (248 byte)1716041891: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041891: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041891: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041892: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041894: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041894: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041894: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041896: 
+-----------------------------------------------
+RX(dev=29209):
+<HELLO 29209 DEV-1>
+-----------------------------------------------
+1716041897: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041897: 
+-------------------------------------------------------
+TX (dev=29209)
+<OK
+>
+
+-------------------------------------------------------
+1716041897: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041897: 
+-------------------------------------------------------
+/tmp/fifo-29209 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041897: 
+-------------------------------------------------------
+ /tmp/fifo-29209 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041897: 
+-------------------------------------------------------
+29209 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041897: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041897: 
+-----------------------------------------------
+RX(dev=29209):
+<SPEED 1058761088.000000>
+-----------------------------------------------
+1716041898: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=1058761088.00
+
+-------------------------------------------------------
+1716041898: 
+-------------------------------------------------------
+TX (dev=29209)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041898: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041898: 
+-------------------------------------------------------
+29209 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041898: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041898: 
+-----------------------------------------------
+RX(dev=29209):
+<RPM 0>
+-----------------------------------------------
+1716041899: 
+-------------------------------------------------------
+RPM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041899: 
+-------------------------------------------------------
+TX (dev=29209)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041899: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041899: 
+-------------------------------------------------------
+29209 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041900: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041900: 
+-----------------------------------------------
+RX(dev=29209):
+<SEM 2120817471 0>
+-----------------------------------------------
+1716041901: 
+-------------------------------------------------------
+TX (dev=29209)
+<OK Forced response (ERR bad SEM number or value out of range
+)
+>
+
+-------------------------------------------------------
+1716041901: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041901: 
+-------------------------------------------------------
+29209 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041901: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041901: 
+-----------------------------------------------
+RX(dev=29209):
+<BYE>
+-----------------------------------------------
+1716041902: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041902: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041902: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041902: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041917: Harrera-bufferraren tamaina gaindituta (248 byte)1716041917: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041917: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041917: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041918: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041951: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041951: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041951: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041952: 
+-----------------------------------------------
+RX(dev=29259):
+<HELLO 29259 DEV-1>
+-----------------------------------------------
+1716041953: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041953: 
+-------------------------------------------------------
+TX (dev=29259)
+<OK
+>
+
+-------------------------------------------------------
+1716041953: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041953: 
+-------------------------------------------------------
+/tmp/fifo-29259 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041953: 
+-------------------------------------------------------
+ /tmp/fifo-29259 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041953: 
+-------------------------------------------------------
+29259 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041953: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041953: 
+-----------------------------------------------
+RX(dev=29259):
+<SPEED -1472688000.000000>
+-----------------------------------------------
+1716041954: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=-1472688000.00
+
+-------------------------------------------------------
+1716041954: 
+-------------------------------------------------------
+TX (dev=29259)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041954: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041954: 
+-------------------------------------------------------
+29259 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041954: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041954: 
+-----------------------------------------------
+RX(dev=29259):
+<RPM 0>
+-----------------------------------------------
+1716041955: 
+-------------------------------------------------------
+RPM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716041955: 
+-------------------------------------------------------
+TX (dev=29259)
+<OK Forced response (ERR ERROR in rpm number
+)
+>
+
+-------------------------------------------------------
+1716041955: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041955: 
+-------------------------------------------------------
+29259 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041956: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041956: 
+-----------------------------------------------
+RX(dev=29259):
+<SEM 2022717608 0>
+-----------------------------------------------
+1716041957: 
+-------------------------------------------------------
+TX (dev=29259)
+<OK Forced response (ERR bad SEM number or value out of range
+)
+>
+
+-------------------------------------------------------
+1716041957: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041957: 
+-------------------------------------------------------
+29259 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041957: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041957: 
+-----------------------------------------------
+RX(dev=29259):
+<BYE>
+-----------------------------------------------
+1716041958: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041958: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041958: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041958: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041973: Harrera-bufferraren tamaina gaindituta (248 byte)1716041973: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716041973: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716041973: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041974: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716041986: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716041986: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716041986: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716041989: 
+-----------------------------------------------
+RX(dev=29339):
+<HELLO 29339 DEV-1>
+-----------------------------------------------
+1716041990: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041990: 
+-------------------------------------------------------
+TX (dev=29339)
+<OK
+>
+
+-------------------------------------------------------
+1716041990: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041990: 
+-------------------------------------------------------
+/tmp/fifo-29339 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716041990: 
+-------------------------------------------------------
+ /tmp/fifo-29339 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716041990: 
+-------------------------------------------------------
+29339 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041990: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041990: 
+-----------------------------------------------
+RX(dev=29339):
+<SPEED -553323776.000000>
+-----------------------------------------------
+1716041991: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=-553323776.00
+
+-------------------------------------------------------
+1716041991: 
+-------------------------------------------------------
+TX (dev=29339)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716041991: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041991: 
+-------------------------------------------------------
+29339 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041991: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041991: 
+-----------------------------------------------
+RX(dev=29339):
+<RPM 5327>
+-----------------------------------------------
+1716041992: 
+-------------------------------------------------------
+RPM=5327 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716041992: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <5>. GAKOA <491> da.
+********************************************[0m
+1716041992: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716041992: 
+-------------------------------------------------------
+TX (dev=29339)
+<OK
+>
+
+-------------------------------------------------------
+1716041992: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041992: 
+-------------------------------------------------------
+29339 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041993: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041993: 
+-----------------------------------------------
+RX(dev=29339):
+<SEM 552797407 0>
+-----------------------------------------------
+1716041994: 
+-------------------------------------------------------
+TX (dev=29339)
+<OK Forced response (ERR bad SEM number or value out of range
+)
+>
+
+-------------------------------------------------------
+1716041994: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716041994: 
+-------------------------------------------------------
+29339 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716041994: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716041994: 
+-----------------------------------------------
+RX(dev=29339):
+<BYE>
+-----------------------------------------------
+1716041995: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716041995: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716041995: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716041995: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042010: Harrera-bufferraren tamaina gaindituta (248 byte)1716042010: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042010: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716042010: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042011: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042038: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042038: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042038: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042038: 
+-----------------------------------------------
+RX(dev=29549):
+<HELLO 29549 DEV-1>
+-----------------------------------------------
+1716042039: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042040: 
+-------------------------------------------------------
+TX (dev=29549)
+<OK
+>
+
+-------------------------------------------------------
+1716042040: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042040: 
+-------------------------------------------------------
+/tmp/fifo-29549 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042040: 
+-------------------------------------------------------
+ /tmp/fifo-29549 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042040: 
+-------------------------------------------------------
+29549 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042040: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042040: 
+-----------------------------------------------
+RX(dev=29549):
+<SPEED -1531957120.000000>
+-----------------------------------------------
+1716042041: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=-1531957120.00
+
+-------------------------------------------------------
+1716042041: 
+-------------------------------------------------------
+TX (dev=29549)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716042041: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042041: 
+-------------------------------------------------------
+29549 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042041: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042041: 
+-----------------------------------------------
+RX(dev=29549):
+<RPM 2950>
+-----------------------------------------------
+1716042042: 
+-------------------------------------------------------
+RPM=2950 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042042: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042042: 
+-------------------------------------------------------
+TX (dev=29549)
+<OK
+>
+
+-------------------------------------------------------
+1716042042: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042042: 
+-------------------------------------------------------
+29549 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042043: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042043: 
+-----------------------------------------------
+RX(dev=29549):
+<SEM 2 0>
+-----------------------------------------------
+1716042044: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042044: 
+-------------------------------------------------------
+SEM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716042044: 
+-------------------------------------------------------
+TX (dev=29549)
+<OK Forced response (ERR WRONG SEM2 value 0
+)
+>
+
+-------------------------------------------------------
+1716042044: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042044: 
+-------------------------------------------------------
+29549 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042044: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042044: 
+-----------------------------------------------
+RX(dev=29549):
+<BYE>
+-----------------------------------------------
+1716042045: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042045: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042045: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042045: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042060: Harrera-bufferraren tamaina gaindituta (248 byte)1716042060: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042060: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716042060: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042061: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042078: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042078: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042078: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042081: 
+-----------------------------------------------
+RX(dev=29606):
+<HELLO 29606 DEV-1>
+-----------------------------------------------
+1716042082: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042082: 
+-------------------------------------------------------
+TX (dev=29606)
+<OK
+>
+
+-------------------------------------------------------
+1716042082: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042082: 
+-------------------------------------------------------
+/tmp/fifo-29606 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042082: 
+-------------------------------------------------------
+ /tmp/fifo-29606 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042082: 
+-------------------------------------------------------
+29606 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042082: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042082: 
+-----------------------------------------------
+RX(dev=29606):
+<SPEED 1128820864.000000>
+-----------------------------------------------
+1716042083: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=1128820864.00
+
+-------------------------------------------------------
+1716042083: 
+-------------------------------------------------------
+TX (dev=29606)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716042083: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042083: 
+-------------------------------------------------------
+29606 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042083: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042083: 
+-----------------------------------------------
+RX(dev=29606):
+<RPM 3881>
+-----------------------------------------------
+1716042084: 
+-------------------------------------------------------
+RPM=3881 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042084: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042084: 
+-------------------------------------------------------
+TX (dev=29606)
+<OK
+>
+
+-------------------------------------------------------
+1716042084: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042084: 
+-------------------------------------------------------
+29606 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042085: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042085: 
+-----------------------------------------------
+RX(dev=29606):
+<SEM 1 0>
+-----------------------------------------------
+1716042086: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042086: 
+-------------------------------------------------------
+SEM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716042086: 
+-------------------------------------------------------
+TX (dev=29606)
+<OK Forced response (ERR WRONG SEM1 value 0
+)
+>
+
+-------------------------------------------------------
+1716042086: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042086: 
+-------------------------------------------------------
+29606 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042086: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042086: 
+-----------------------------------------------
+RX(dev=29606):
+<BYE>
+-----------------------------------------------
+1716042087: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042087: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042087: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042087: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042102: Harrera-bufferraren tamaina gaindituta (248 byte)1716042102: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042102: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716042102: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042103: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042273: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042273: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042273: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042274: 
+-----------------------------------------------
+RX(dev=29834):
+<HELLO 29834 DEV-1>
+-----------------------------------------------
+1716042275: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042275: 
+-------------------------------------------------------
+TX (dev=29834)
+<OK
+>
+
+-------------------------------------------------------
+1716042275: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042275: 
+-------------------------------------------------------
+/tmp/fifo-29834 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042275: 
+-------------------------------------------------------
+ /tmp/fifo-29834 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042275: 
+-------------------------------------------------------
+29834 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042275: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042275: 
+-----------------------------------------------
+RX(dev=29834):
+<SPEED 0.000000>
+-----------------------------------------------
+1716042276: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716042276: 
+-------------------------------------------------------
+TX (dev=29834)
+<OK Forced response (OK
+)
+>
+
+-------------------------------------------------------
+1716042276: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042276: 
+-------------------------------------------------------
+29834 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042276: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042276: 
+-----------------------------------------------
+RX(dev=29834):
+<RPM 1544>
+-----------------------------------------------
+1716042277: 
+-------------------------------------------------------
+RPM=1544 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042277: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042277: 
+-------------------------------------------------------
+TX (dev=29834)
+<OK
+>
+
+-------------------------------------------------------
+1716042277: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042277: 
+-------------------------------------------------------
+29834 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042278: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042278: 
+-----------------------------------------------
+RX(dev=29834):
+<SEM 2 0>
+-----------------------------------------------
+1716042279: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042279: 
+-------------------------------------------------------
+SEM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716042279: 
+-------------------------------------------------------
+TX (dev=29834)
+<OK Forced response (ERR WRONG SEM2 value 0
+)
+>
+
+-------------------------------------------------------
+1716042279: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042279: 
+-------------------------------------------------------
+29834 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042279: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042279: 
+-----------------------------------------------
+RX(dev=29834):
+<BYE>
+-----------------------------------------------
+1716042280: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042280: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042280: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042280: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042295: Harrera-bufferraren tamaina gaindituta (248 byte)1716042295: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042295: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716042295: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042296: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042386: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042386: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042386: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042387: 
+-----------------------------------------------
+RX(dev=29970):
+<HELLO 29970 DEV-1>
+-----------------------------------------------
+1716042388: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042388: 
+-------------------------------------------------------
+TX (dev=29970)
+<OK
+>
+
+-------------------------------------------------------
+1716042388: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042388: 
+-------------------------------------------------------
+/tmp/fifo-29970 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042388: 
+-------------------------------------------------------
+ /tmp/fifo-29970 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042388: 
+-------------------------------------------------------
+29970 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042388: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042388: 
+-----------------------------------------------
+RX(dev=29970):
+<SPEED 192.699997>
+-----------------------------------------------
+1716042389: 
+-------------------------------------------------------
+Memoriako eguneraketa ZUZENA SPEED=192.70
+
+-------------------------------------------------------
+1716042389: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716042389: 
+-------------------------------------------------------
+TX (dev=29970)
+<OK
+>
+
+-------------------------------------------------------
+1716042389: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042389: 
+-------------------------------------------------------
+29970 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042389: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042389: 
+-----------------------------------------------
+RX(dev=29970):
+<RPM 3851>
+-----------------------------------------------
+1716042390: 
+-------------------------------------------------------
+RPM=3851 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042390: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <6>. GAKOA <532> da.
+********************************************[0m
+1716042390: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042390: 
+-------------------------------------------------------
+TX (dev=29970)
+<OK
+>
+
+-------------------------------------------------------
+1716042390: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042390: 
+-------------------------------------------------------
+29970 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042391: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042391: 
+-----------------------------------------------
+RX(dev=29970):
+<SEM 1 0>
+-----------------------------------------------
+1716042392: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042392: 
+-------------------------------------------------------
+SEM=0 balioa jaso da. EZ ZUZENA.
+
+-------------------------------------------------------
+1716042392: 
+-------------------------------------------------------
+TX (dev=29970)
+<OK Forced response (ERR WRONG SEM1 value 0
+)
+>
+
+-------------------------------------------------------
+1716042392: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042392: 
+-------------------------------------------------------
+29970 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042392: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042392: 
+-----------------------------------------------
+RX(dev=29970):
+<BYE>
+-----------------------------------------------
+1716042393: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042393: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042393: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042393: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042408: Harrera-bufferraren tamaina gaindituta (248 byte)1716042408: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042408: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716042408: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042409: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042699: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042699: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042699: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042703: 
+-----------------------------------------------
+RX(dev=30543):
+<HELLO 30543 DEV-1>
+-----------------------------------------------
+1716042704: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042704: 
+-------------------------------------------------------
+TX (dev=30543)
+<OK
+>
+
+-------------------------------------------------------
+1716042704: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042704: 
+-------------------------------------------------------
+/tmp/fifo-30543 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042704: 
+-------------------------------------------------------
+ /tmp/fifo-30543 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042704: 
+-------------------------------------------------------
+30543 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042704: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042704: 
+-----------------------------------------------
+RX(dev=30543):
+<SPEED 273.130005>
+-----------------------------------------------
+1716042705: 
+-------------------------------------------------------
+Memoriako eguneraketa ZUZENA SPEED=273.13
+
+-------------------------------------------------------
+1716042705: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716042705: 
+-------------------------------------------------------
+TX (dev=30543)
+<OK
+>
+
+-------------------------------------------------------
+1716042705: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042705: 
+-------------------------------------------------------
+30543 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042705: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042705: 
+-----------------------------------------------
+RX(dev=30543):
+<RPM 1826>
+-----------------------------------------------
+1716042706: 
+-------------------------------------------------------
+RPM=1826 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042706: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042706: 
+-------------------------------------------------------
+TX (dev=30543)
+<OK
+>
+
+-------------------------------------------------------
+1716042706: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042706: 
+-------------------------------------------------------
+30543 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042707: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042707: 
+-----------------------------------------------
+RX(dev=30543):
+<SEM 2 129>
+-----------------------------------------------
+1716042708: 
+-------------------------------------------------------
+TX (dev=30543)
+<OK Forced response (ERR bad SEM number or value out of range
+)
+>
+
+-------------------------------------------------------
+1716042708: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042708: 
+-------------------------------------------------------
+30543 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042708: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042708: 
+-----------------------------------------------
+RX(dev=30543):
+<BYE>
+-----------------------------------------------
+1716042709: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042709: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042709: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042709: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042724: Harrera-bufferraren tamaina gaindituta (248 byte)1716042724: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042724: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716042724: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042725: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042772: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042772: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042772: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042774: 
+-----------------------------------------------
+RX(dev=30638):
+<HELLO 30638 DEV-1>
+-----------------------------------------------
+1716042775: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042775: 
+-------------------------------------------------------
+TX (dev=30638)
+<OK
+>
+
+-------------------------------------------------------
+1716042775: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042775: 
+-------------------------------------------------------
+/tmp/fifo-30638 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042775: 
+-------------------------------------------------------
+ /tmp/fifo-30638 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042775: 
+-------------------------------------------------------
+30638 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042775: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042775: 
+-----------------------------------------------
+RX(dev=30638):
+<SPEED 53.680000>
+-----------------------------------------------
+1716042776: 
+-------------------------------------------------------
+Memoriako eguneraketa ZUZENA SPEED=53.68
+
+-------------------------------------------------------
+1716042776: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716042776: 
+-------------------------------------------------------
+TX (dev=30638)
+<OK
+>
+
+-------------------------------------------------------
+1716042776: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042776: 
+-------------------------------------------------------
+30638 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042776: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042776: 
+-----------------------------------------------
+RX(dev=30638):
+<RPM 2493>
+-----------------------------------------------
+1716042777: 
+-------------------------------------------------------
+RPM=2493 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042777: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042777: 
+-------------------------------------------------------
+TX (dev=30638)
+<OK
+>
+
+-------------------------------------------------------
+1716042777: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042777: 
+-------------------------------------------------------
+30638 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042778: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042778: 
+-----------------------------------------------
+RX(dev=30638):
+<SEM 1 128>
+-----------------------------------------------
+1716042779: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042779: 
+-------------------------------------------------------
+Jasotako balioa SEM=128. PARTZIALKI zuzena. BLOKEOA txarto egin da
+
+-------------------------------------------------------
+1716042779: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <7>. GAKOA <737> da.
+********************************************[0m
+1716042779: 
+-------------------------------------------------------
+TX (dev=30638)
+<OK Parcial response. Bad signal syncronization.
+>
+
+-------------------------------------------------------
+1716042779: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042779: 
+-------------------------------------------------------
+30638 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042779: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042779: 
+-----------------------------------------------
+RX(dev=30643):
+<HELLO 30643 DEV-1>
+-----------------------------------------------
+1716042780: 
+-------------------------------------------------------
+<DEV-1> gailua BIKOIZTUTA, aurretik dago eskuragarri.
+
+-------------------------------------------------------
+1716042780: 
+-------------------------------------------------------
+TX (dev=30643)
+<OK Forced response (ERR Duplicate device name
+)
+>
+
+-------------------------------------------------------
+1716042780: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042780: 
+-----------------------------------------------
+RX(dev=30638):
+<BYE>
+-----------------------------------------------
+1716042781: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042781: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042781: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042781: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042781: 
+*************************************************
+:ok> 2 ariketaren testuingurua prest.
+*************************************************
+1716042781: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042782: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042838: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042838: 
+-------------------------------------------------------
+3 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042838: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042839: 
+-----------------------------------------------
+RX(dev=30668):
+<HELLO 30668 DEV-1>
+-----------------------------------------------
+1716042840: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042840: 
+-------------------------------------------------------
+TX (dev=30668)
+<OK
+>
+
+-------------------------------------------------------
+1716042840: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042840: 
+-------------------------------------------------------
+/tmp/fifo-30668 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042840: 
+-------------------------------------------------------
+ /tmp/fifo-30668 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042840: 
+-------------------------------------------------------
+30668 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042840: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042840: 
+-----------------------------------------------
+RX(dev=30668):
+<SPEED 96.190002>
+-----------------------------------------------
+1716042841: 
+-------------------------------------------------------
+Memoriako eguneraketa ZUZENA SPEED=96.19
+
+-------------------------------------------------------
+1716042841: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716042841: 
+-------------------------------------------------------
+TX (dev=30668)
+<OK
+>
+
+-------------------------------------------------------
+1716042841: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042841: 
+-------------------------------------------------------
+30668 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042841: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042841: 
+-----------------------------------------------
+RX(dev=30701):
+<HELLO 30701 DEV-2>
+-----------------------------------------------
+1716042842: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042842: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <8>. GAKOA <882> da.
+********************************************[0m
+1716042842: 
+[5m********************************************
+:OK> ERANTZUN ZUZENA: <12>. GAKOA <22> da.
+********************************************[0m
+1716042842: 
+-------------------------------------------------------
+TX (dev=30701)
+<OK
+>
+
+-------------------------------------------------------
+1716042842: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042842: 
+-------------------------------------------------------
+/tmp/fifo-30701 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042842: 
+-------------------------------------------------------
+ /tmp/fifo-30701 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042842: 
+-------------------------------------------------------
+30701 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042842: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-2> gailuan
+
+-------------------------------------------------------
+1716042842: 
+-----------------------------------------------
+RX(dev=30668):
+<RPM 956>
+-----------------------------------------------
+1716042843: 
+-------------------------------------------------------
+RPM=956 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042843: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042843: 
+-------------------------------------------------------
+TX (dev=30668)
+<OK
+>
+
+-------------------------------------------------------
+1716042843: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042843: 
+-------------------------------------------------------
+30668 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042844: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042844: 
+-----------------------------------------------
+RX(dev=30701):
+<SPEED 8.490000>
+-----------------------------------------------
+1716042845: 
+-------------------------------------------------------
+Memoriako eguneraketa ZUZENA SPEED=8.49
+
+-------------------------------------------------------
+1716042845: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716042845: 
+-------------------------------------------------------
+TX (dev=30701)
+<OK
+>
+
+-------------------------------------------------------
+1716042845: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042845: 
+-------------------------------------------------------
+30701 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042845: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-2> gailuan
+
+-------------------------------------------------------
+1716042845: 
+-----------------------------------------------
+RX(dev=30668):
+<SEM 1 108>
+-----------------------------------------------
+1716042846: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042846: 
+-------------------------------------------------------
+Jasotako balioa SEM=108. PARTZIALKI zuzena. BLOKEOA txarto egin da
+
+-------------------------------------------------------
+1716042846: 
+-------------------------------------------------------
+TX (dev=30668)
+<OK Parcial response. Bad signal syncronization.
+>
+
+-------------------------------------------------------
+1716042846: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042846: 
+-------------------------------------------------------
+30668 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042846: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042846: 
+-----------------------------------------------
+RX(dev=30701):
+<RPM 3431>
+-----------------------------------------------
+1716042847: 
+-------------------------------------------------------
+RPM=3431 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716042847: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716042847: 
+-------------------------------------------------------
+TX (dev=30701)
+<OK
+>
+
+-------------------------------------------------------
+1716042847: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042847: 
+-------------------------------------------------------
+30701 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042848: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-2> gailuan
+
+-------------------------------------------------------
+1716042848: 
+-----------------------------------------------
+RX(dev=30668):
+<BYE>
+-----------------------------------------------
+1716042849: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042849: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042849: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042849: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042849: 
+-----------------------------------------------
+RX(dev=30701):
+<SEM 1 90>
+-----------------------------------------------
+1716042850: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716042850: 
+-------------------------------------------------------
+Jasotako balioa SEM=90. PARTZIALKI zuzena. BLOKEOA txarto egin da
+
+-------------------------------------------------------
+1716042850: 
+-------------------------------------------------------
+TX (dev=30701)
+<OK Parcial response. Bad signal syncronization.
+>
+
+-------------------------------------------------------
+1716042850: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042850: 
+-------------------------------------------------------
+30701 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042850: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-2> gailuan
+
+-------------------------------------------------------
+1716042850: 
+-----------------------------------------------
+RX(dev=30701):
+<BYE>
+-----------------------------------------------
+1716042851: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042851: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716042851: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716042851: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716042851: 
+*************************************************
+:ok> 2 ariketaren testuingurua prest.
+*************************************************
+1716042851: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042852: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716042997: 
+
+
+*************************************************
+
+          2. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1716042997: 
+-------------------------------------------------------
+6 mezu ezabatu dira mezu ilaratik
+
+-------------------------------------------------------
+1716042997: 
+-----------------------------------------------
+Baliabideen hasieratzea ondo burutu da.
+-----------------------------------------------
+1716042998: 
+-----------------------------------------------
+RX(dev=31072):
+<HELLO 31072 DEV-1>
+-----------------------------------------------
+1716042999: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716042999: 
+-------------------------------------------------------
+TX (dev=31072)
+<OK
+>
+
+-------------------------------------------------------
+1716042999: 
+-------------------------------------------------------
+<2> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716042999: 
+-------------------------------------------------------
+/tmp/fifo-31072 FIFOa zabaltzeko zain 2 segundotan
+
+-------------------------------------------------------
+1716042999: 
+-------------------------------------------------------
+ /tmp/fifo-31072 FIFOren atzipen zuzena
+
+-------------------------------------------------------
+1716042999: 
+-------------------------------------------------------
+31072 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716042999: 
+-------------------------------------------------------
+<SPEED> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716042999: 
+-----------------------------------------------
+RX(dev=31072):
+<SPEED 266.529999>
+-----------------------------------------------
+1716043000: 
+-------------------------------------------------------
+Memoriako eguneraketa ZUZENA SPEED=266.53
+
+-------------------------------------------------------
+1716043000: 
+-------------------------------------------------------
+Memoriako eguneraketa OKERRA SPEED=0.00
+
+-------------------------------------------------------
+1716043000: 
+-------------------------------------------------------
+TX (dev=31072)
+<OK
+>
+
+-------------------------------------------------------
+1716043000: 
+-------------------------------------------------------
+<3> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716043000: 
+-------------------------------------------------------
+31072 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716043000: 
+-------------------------------------------------------
+<RPM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716043000: 
+-----------------------------------------------
+RX(dev=31072):
+<RPM 4326>
+-----------------------------------------------
+1716043001: 
+-------------------------------------------------------
+RPM=4326 balioa jaso da. ZUZENA.
+
+-------------------------------------------------------
+1716043001: 
+-------------------------------------------------------
+Ez da memorian eguneratu hurrengo balioa RPM=0
+
+-------------------------------------------------------
+1716043001: 
+-------------------------------------------------------
+TX (dev=31072)
+<OK
+>
+
+-------------------------------------------------------
+1716043001: 
+-------------------------------------------------------
+<4> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716043001: 
+-------------------------------------------------------
+31072 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716043002: 
+-------------------------------------------------------
+<SEM> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716043002: 
+-----------------------------------------------
+RX(dev=31072):
+<SEM 2 85>
+-----------------------------------------------
+1716043003: 
+-------------------------------------------------------
+Ez da blokeoa era zuzenean burutu.
+
+-------------------------------------------------------
+1716043003: 
+-------------------------------------------------------
+Jasotako balioa SEM=85. PARTZIALKI zuzena. BLOKEOA txarto egin da
+
+-------------------------------------------------------
+1716043003: 
+-------------------------------------------------------
+TX (dev=31072)
+<OK Parcial response. Bad signal syncronization.
+>
+
+-------------------------------------------------------
+1716043003: 
+-------------------------------------------------------
+<5> ESKARIA bidalita. ERANTZUNAREN zain...... 
+-------------------------------------------------------
+1716043003: 
+-------------------------------------------------------
+31072 gailuari eragiketa agindu bat bidali zaio
+
+-------------------------------------------------------
+1716043003: 
+-------------------------------------------------------
+<BYE> agindua itxaroten <DEV-1> gailuan
+
+-------------------------------------------------------
+1716043003: 
+-----------------------------------------------
+RX(dev=31072):
+<BYE>
+-----------------------------------------------
+1716043004: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-6/.n_cliente>
+1716043004: 
+-------------------------------------------------------
+TX (dev=0)
+<OK
+>
+
+-------------------------------------------------------
+1716043004: 
+-------------------------------------------------------
+Agindu zerrenda bukatuta <> gailurako
+
+-------------------------------------------------------
+1716043004: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 1 sesio gelditzen dira
+
+-------------------------------------------------------
+1716043019: Harrera-bufferraren tamaina gaindituta (248 byte)1716043019: 
+-------------------------------------------------------
+Sesio bat BUKATUTA. 0 sesio gelditzen dira
+
+-------------------------------------------------------
+1716043019: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 2. ariketa.
+
+*************************************************[0m
+1716043019: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716043020: COMMAND <who >> .trazas-6/alumno-45994891C>
+crash    seat0        2024-05-18 12:18 (login screen)
+crash    :1           2024-05-18 12:18 (:1)
+1716044998: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-6" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1716044998: COMMAND <cp ./client.? .trazas-6>
+1716044998: COMMAND <tar zcf save_file-45994891C .trazas-6 > /dev/null>
+1716044998: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-6\nput save_file-45994891C 45994891C-18-5-14h57\n" | 	  ftp -n 2>&1 > /dev/null>
+1716044998: COMMAND <test -f .trazas-6/.clean_bck.tz && rm .trazas-6/.clean_bck.tz>

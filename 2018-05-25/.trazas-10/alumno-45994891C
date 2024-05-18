@@ -1,0 +1,745 @@
+1715424891: COMMAND <cp ./examen10 /tmp/.examen10>
+1715424891: COMMAND <cp -f /tmp/.examen10 ./examen10>
+1715424891: COMMAND <uname -a >> .trazas-10/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1715424891: COMMAND <ifconfig 2>&1 >> .trazas-10/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 2551  bytes 326299 (326.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2551  bytes 326299 (326.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 613981  bytes 825297704 (825.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 51459  bytes 10111518 (10.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1715424891: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-10/alumno-45994891C>
+MACHINE-ID: 1715424891: COMMAND <cat /etc/machine-id >> .trazas-10/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1715424891: 
+Makina badago identifikatuta.
+1715424891: RX: <OK Accepted>
+1715424895: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1715424895: RX: <NEW>
+1715424895: 
+***************************************************
+Erabiltzaileak ez du pasahitz publikorik erregistratuta.
+Mesedez, baieztatu pasahitza alta emateko.
+[5mPasahitza hurrengo saioetarako gogoratu behar da.[0m
+Erabili karaktere pertsonal pribatuen sekuentzia bat.
+Zerbitzarian bertsio enkriptatu bat gordeko da.
+Ez bazaude ados erabili duzun pasahitzarekin
+eten prozesua eta hasi berriro erregistroa.
+Gero, zailagoa izango da aldatzea.
+Administratzailearekin harremanetan jarri beharko duzu:
+armando.ferro@ehu.eus
+***************************************************
+1715424902: TX: <CREATEPWD JAJQ02AO7zMXiA>
+1715424902: [5m
+LOGIN: Pasahitz publikoa <JAJQ02AO7zMXiA> erregistratuta.[0m
+1715424902: RX: <DONE>
+1715424902: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1715424902: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1715424902: RX: <REGISTERED>
+1715430688: COMMAND <cp ./examen10 /tmp/.examen10>
+1715430688: COMMAND <cp -f /tmp/.examen10 ./examen10>
+1715430688: COMMAND <uname -a >> .trazas-10/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1715430688: COMMAND <ifconfig 2>&1 >> .trazas-10/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 3565  bytes 469236 (469.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3565  bytes 469236 (469.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 795261  bytes 1058136307 (1.0 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 78479  bytes 15835274 (15.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1715430688: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-10/alumno-45994891C>
+MACHINE-ID: 1715430688: COMMAND <cat /etc/machine-id >> .trazas-10/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1715430688: 
+Makina badago identifikatuta.
+1715430688: RX: <OK Accepted>
+1715430691: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1715430691: RX: <OK>
+1715430691: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1715430691: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1715430691: RX: <REGISTERED>
+1715430691: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-10" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715430691: COMMAND <cp ./client.? .trazas-10>
+1715430691: COMMAND <tar zcf save_file-45994891C .trazas-10 > /dev/null>
+1715430691: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-10\nput save_file-45994891C 45994891C-11-5-14h31\n" | 	  ftp -n 2>&1 > /dev/null>
+1715430692: COMMAND <test -f .trazas-10/.clean_bck.tz && rm .trazas-10/.clean_bck.tz>
+1715430696: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715430696: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715430696: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715430696: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715430696: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715430696: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715430696: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715430696: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715430696: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715430696: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715430696: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715430697: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431320: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-10" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715431320: COMMAND <cp ./client.? .trazas-10>
+1715431320: COMMAND <tar zcf save_file-45994891C .trazas-10 > /dev/null>
+1715431320: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-10\nput save_file-45994891C 45994891C-11-5-14h31\n" | 	  ftp -n 2>&1 > /dev/null>
+1715431320: COMMAND <test -f .trazas-10/.clean_bck.tz && rm .trazas-10/.clean_bck.tz>
+1715431415: COMMAND <cp ./examen10 /tmp/.examen10>
+1715431415: COMMAND <cp -f /tmp/.examen10 ./examen10>
+1715431415: COMMAND <uname -a >> .trazas-10/alumno-45994891C>
+Linux Crash-Main 6.8.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 20 00:40:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+1715431415: COMMAND <ifconfig 2>&1 >> .trazas-10/alumno-45994891C>
+enp3s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 4c:cc:6a:84:67:87  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 19  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 3699  bytes 486300 (486.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3699  bytes 486300 (486.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:c3:75:83  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.32  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::c7bf:6ee4:769d:7fb8  prefixlen 64  scopeid 0x20<link>
+        ether 30:e3:7a:9a:ac:c7  txqueuelen 1000  (Ethernet)
+        RX packets 807088  bytes 1071690067 (1.0 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 80199  bytes 16320669 (16.3 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+1715431415: COMMAND <echo -n 'MACHINE-ID: ' >> .trazas-10/alumno-45994891C>
+MACHINE-ID: 1715431415: COMMAND <cat /etc/machine-id >> .trazas-10/alumno-45994891C>
+58ceb7a0fbdd4048b1b2afe44169096f
+1715431415: 
+Makina badago identifikatuta.
+1715431415: RX: <OK Accepted>
+1715431415: TX: <CHECKPWD JAJQ02AO7zMXiA>
+1715431415: RX: <OK>
+1715431415: 
+********************************************
+         SAIOA HASTEN
+********************************************
+1715431415: TX: <UUID 572f97c8-a5e1-496b-9924-9927e6a4442a>
+1715431415: RX: <REGISTERED>
+1715431415: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-10" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715431415: COMMAND <cp ./client.? .trazas-10>
+1715431415: COMMAND <tar zcf save_file-45994891C .trazas-10 > /dev/null>
+1715431415: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-10\nput save_file-45994891C 45994891C-11-5-14h43\n" | 	  ftp -n 2>&1 > /dev/null>
+1715431416: COMMAND <test -f .trazas-10/.clean_bck.tz && rm .trazas-10/.clean_bck.tz>
+1715431417: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431417: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431418: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431418: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431418: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431418: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431421: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431421: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431421: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431421: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431421: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431422: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431438: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431438: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431438: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431438: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431438: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431438: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431441: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431441: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431441: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431441: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431441: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431442: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431565: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431565: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431565: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431565: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431565: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431565: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431568: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431568: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431568: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431568: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431568: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431569: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431694: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431694: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431694: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431694: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431694: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431694: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431697: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431697: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431697: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431697: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431697: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431698: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431781: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431781: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431781: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431781: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431781: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431781: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431784: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431784: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431784: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431784: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431784: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431785: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431862: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431862: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431862: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431862: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431862: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431862: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431865: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431865: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431865: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431865: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431865: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431878: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715431878: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715431878: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715431878: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715431878: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715431878: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715431881: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431881: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715431881: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715431881: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715431881: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715431882: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432089: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715432089: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715432089: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715432089: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715432089: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715432089: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715432092: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432092: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432092: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715432092: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715432092: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432093: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432113: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715432113: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715432114: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715432114: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715432114: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715432114: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715432117: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432117: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432117: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715432117: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715432117: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432118: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432205: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715432205: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715432205: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715432205: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715432205: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715432205: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715432208: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432208: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432208: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715432208: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715432208: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432209: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432491: 
+
+
+*************************************************
+
+          1. ARIKETA EXEKUTATZEN.
+
+*************************************************
+
+
+1715432491: COMMAND <ps -C client -o stat=,pid= | grep -v [Zz] |awk '{print $2}' > .trazas-10/.n_cliente>
+1715432491: 
+-------------------------------------------------------
+==> 127.0.0.1:3010 helbidean konektatzen...
+1715432491: ==> (5) socket-a ondo hasieratuta 127.0.0.1:3010 helbidean
+-------------------------------------------------------
+1715432491: 
+-------------------------------------------------------
+==> 20 byteko mezua ondo bidalia 127.0.0.1 helbidera
+TX (5): <H>
+-------------------------------------------------------
+1715432491: 
+-------------------------------------------------------
+==> mezua jasotzeko 3 segundo itxaroten.
+
+-------------------------------------------------------
+1715432494: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432494: 
+------------------------------------------
+Datuak jasotzeko tenporizazioa BUKATUTA.
+------------------------------------------
+1715432494: BEGIRALEA socketa (5) 127.0.0.1-rekiko ixten ari da
+1715432494: 
+[5m*************************************************
+:nok> Ez duzu ondo egin 1. ariketa.
+
+*************************************************[0m
+1715432494: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432495: COMMAND <who >> .trazas-10/alumno-45994891C>
+crash    seat0        2024-05-11 11:18 (login screen)
+crash    :1           2024-05-11 11:18 (:1)
+1715432672: COMMAND <find . -type f -newer .signature -print 2>/dev/null | awk -v pwd="`pwd`/.trazas-10" '{ if(index($0,pwd) != 1) print }' > /tmp/.asitmp>
+1715432672: COMMAND <cp ./client.? .trazas-10>
+1715432672: COMMAND <tar zcf save_file-45994891C .trazas-10 > /dev/null>
+1715432672: COMMAND <echo "\nopen u017633.bi.ehu.es\nuser anonymous anonymous\npassive\ncd LAB2024/examen-10\nput save_file-45994891C 45994891C-11-5-14h43\n" | 	  ftp -n 2>&1 > /dev/null>
+1715432672: COMMAND <test -f .trazas-10/.clean_bck.tz && rm .trazas-10/.clean_bck.tz>

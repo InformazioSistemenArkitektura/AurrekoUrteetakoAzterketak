@@ -12,13 +12,9 @@
 #include <sys/msg.h>
 #include <sys/socket.h>
 #include <sys/signal.h>
-#include <unistd.h>
-
-int ariketa1();
-int ariketa2();
 
 #define SERVER_PORT 3001
-#define DESTIP "127.0.0.1"
+#define SERVER_IP "127.0.0.1"
 
 #define CLAVE 0x45994891L	// Clave de los recursos. Sustituir por DNI.
 #define TIME 4			// Temporizador de retransmisión
@@ -59,12 +55,6 @@ char *udp_cmd[]={
 #define ST_DATA 2
 #define LEN_NAME 16	//Usar como maximo nombres de 8
 
-struct msgbuf {
-  long mtype;         /* message type, must be > 0 */
-  char mtext[255];    /* message data */
-};
-
-
 struct st_data {
 	int state;	// State of register
 	char name[LEN_NAME];	// Name of device
@@ -76,320 +66,398 @@ struct st_data {
 	pid_t pid;	// Process identifier
 };
 
-union semun {
-   int              val;    /* Value for SETVAL */
-   struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
-   unsigned short  *array;  /* Array for GETALL, SETALL */
-   struct seminfo  *__buf;  /* Buffer for IPC_INFO
-                               (Linux-specific) */
+struct msgbuf {
+  long mtype;         /* message type, must be > 0 */
+  char mtext[16];     /* message data */
 };
 
 
-/*************************************************************************/
-/* Función a utilizar para sustituir a signal() de la libreria.
-Esta función permite programar la recepción de la señál de temporización de
-alarm() para que pueda interrumpir una funcion bloqueante.
-El alumno debe saber como utilizarla.
-*/
-int signal_EINTR(int sig,void(*handler)())
-{
-struct sigaction sa;
-	sa.sa_handler = handler;
-	sigemptyset(&sa.sa_mask);
-	sa.sa_flags = 0;
-	return(sigaction(sig,&sa,NULL));
-}
+//semctl-rentzat
+ union semun {
+     int              val;    /* Value for SETVAL */
+     struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
+     unsigned short  *array;  /* Array for GETALL, SETALL */
+     struct seminfo  *__buf;  /* Buffer for IPC_INFO
+                                 (Linux-specific) */
+ };
+
 
 /*
-  if(()<0){
-    perror("Errorea:\n");
-    exit(-1);
-  }
+if(()<0){
+  perror("Errorea:\n");
+  exit(-1);
+}
 */
 
-/*************************************************************************/
+int ariketa1();
+int ariketa2();
 
 
 int main(int argc, char *argv[])
 {
-  printf("Aukeratu ariketa:\n");
-  char aukera = getchar();
+  char aukera;
+  printf("Nahi duzun ariketa sartu:\n");
+  aukera = getchar();
+  
   switch(aukera){
-    case('1'):
-      if((ariketa1())<0){
-        perror("1 ariketan errorea:\n");
-        exit(-1);
-      }
-      return(0);
-    case('2'):
-      if((ariketa2())<0){
-        perror("2 ariketan errorea:\n");
-        exit(-1);
-      }
-      printf("\n---------------------------\n2. Ariketa amaituta!\n");
-      //__fpurge(stdin);
-      getchar();
-      return(0);
+    case '1':
+      ariketa1();
+      break;
+    case '2':
+      ariketa2();
+      break;
+    default:
+      exit(-1);
   }
 }
 
-//#================================================================ARIEKTA2================================================================#
 
+//#========================== ARIKETA 2 ==========================#//
 int ariketa2(){
-
-  //MEMORIA PARTEKATUA hasieratu
+  
+  int msgqid;
+  struct msgbuf messageBuffer;
+  
+  if((msgqid = msgget(CLAVE, 0600|IPC_CREAT))<0){
+    perror("Mezu ilara lortzean Errorea:\n");
+    exit(-1);
+  }
+  
+  /**********************************/
+  //MEZU ILARA PREST
+  
   int shmid;
   char* shmptr;
+  
+  struct st_data shmstruct;
+  
   if((shmid = shmget(CLAVE, SIZE_SHM, 0600|IPC_CREAT))<0){
-    perror("shmget Errorea:\n");
+    perror("Memoria partekatua lortzean Errorea:\n");
     exit(-1);
   }
-  printf("Shared Memory ID: %d\n", shmid);
-  if((shmptr = (uint8_t*)shmat(shmid, NULL, 0600|IPC_CREAT))<0){
-    perror("shmat Errorea:\n");
+  
+  if((shmptr = shmat(shmid, 0, 0))<0){
+    perror("Memoria partekatura attach egitean Errorea:\n");
     exit(-1);
   }
-
-  int msgQID;
-  struct msgbuf msgbuffer;
-  //MEZU ILARA hasieratu
-  if((msgQID = msgget(CLAVE, 0600|IPC_CREAT))<0){
-    perror("msgget Errorea:\n");
-    exit(-1);
-  }
-  printf("Message Queue ID: %d\n", msgQID);
-
-  //SEMAFOROAK hasieratu
-  int semid = 0;
+  /**********************************/
+  //MEMORIA PARTEKATUA PREST
+  
+  int semid;
+  
   if((semid = semget(CLAVE, MAX_SEM, 0600|IPC_CREAT))<0){
-    perror("semget Errorea:\n");
+    perror("Semaforoa lortzen Errorea:\n");
     exit(-1);
   }
-  printf("Semaphore Array ID: %d\n", msgQID);
+  
+  /**********************************/
+  //SEMAFORO ARRAY-A PREST
 
-  //UDP hasieratu
+  char bufferIn[255];
+  char bufferOut[255];
+  struct sockaddr_in params;
+  struct sockaddr_in rxParams;
   int udp_socket;
-  struct sockaddr_in params, servParams;
-  char buffer[255];
+  
+  if((udp_socket = socket(AF_INET, SOCK_DGRAM, 0))<0){
+    perror("Socket errorea:\n");
+    exit(-1);
+  }
+  
+  //HELLO
+  sprintf(bufferOut, "HELLO %d DEV-%4d", getpid(), getpid);
   
   params.sin_family = AF_INET;
   params.sin_port = htons(SERVER_PORT);
-  params.sin_addr.s_addr = inet_addr(DESTIP);
-
-  if((udp_socket = socket(AF_INET, SOCK_DGRAM, 0))<0){
-    perror("socket Errorea:\n");
+  params.sin_addr.s_addr = inet_addr(SERVER_IP);
+  
+  int sizeofParams = sizeof(params);
+  /**********************************/
+  //UDP PREST
+  
+  
+  if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+    perror("Bidaltzean Errorea:\n");
     exit(-1);
   }
   
-  printf("Socket-a sortua!\n");
-  int paramSize = sizeof(params);
+  //OK jaso
+  if((recvfrom(udp_socket, bufferIn, sizeof(bufferIn), 0, &rxParams, &sizeofParams))<0){
+    perror("Irakurtzean Errorea:\n");
+    exit(-1);
+  }
+  printf("Erantzuna:\t%s\n", bufferIn);
   
-  for(int i = 0; i<2; i++){
-    //HELLO
-    char devName[5];
-    sprintf(devName, "DEV%1d", i);
-    printf("devName: %s\n", devName);
-    sprintf(buffer, "%s %d %s", udp_cmd[0], getpid(), devName);
-
-    printf("BIDALIKO DA:\n%s\n", buffer);
-    if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-      perror("sendto Errorea:\n");
-      exit(-1);
+  //PORT
+  if((getsockname(udp_socket, &rxParams, &sizeofParams))<0){
+    perror("GetSockName Errorea:\n");
+    exit(-1);
+  }
+  
+  printf("Jatorriko portua: %d\n", ntohs(rxParams.sin_port));
+  
+  sprintf(bufferOut, "PORT %d", ntohs(rxParams.sin_port));
+  
+  if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+    perror("Bidaltzean Errorea:\n");
+    exit(-1);
+  }
+  
+  //OK jaso
+  if((recvfrom(udp_socket, bufferIn, sizeof(bufferIn), 0, &rxParams, &sizeofParams))<0){
+    perror("Irakurtzean Errorea:\n");
+    exit(-1);
+  }
+  printf("Erantzuna:\t%s\n", bufferIn);
+  
+  int aurkituta = 0;
+  int iterazio = 0;
+  printf("Shared memory-ko tokatu zaigun atala bilatzen!\n");
+  while(aurkituta == 0){
+    memcpy(&shmstruct, (struct st_data*)(shmptr + iterazio*sizeof(shmstruct)),sizeof(shmstruct));
+    printf("%d - %s\n", iterazio, shmstruct.name);
+    
+    
+    if(strlen(shmstruct.name)>2){
+      printf("Aurkituta!\n");
+      aurkituta = iterazio;
     }
     
-    if((recvfrom(udp_socket, buffer, sizeof(buffer), 0, &params, &paramSize))<0){
-      perror("recvfrom Errorea:\n");
-      exit(-1);
+    iterazio++;
+    
+    if(iterazio > 3 && aurkituta == 0){
+      aurkituta = -1;
     }
     
-    if((getsockname(udp_socket, &servParams, &paramSize))<0){
+  }
+  
+  printf("Memoria partekatutako %d posizioan (%d) idatziko dugu struct-a!\n", aurkituta, (struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)));
+  
+  //Struct-a memoriatik kopiatu
+  semDown(semid);
+  memcpy(&shmstruct, (struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)),sizeof(shmstruct));
+  //Balioa eraldatu
+  shmstruct.pid = getpid();
+  shmstruct.state = 1;
+  shmstruct.port = ntohs(rxParams.sin_port);
+  //Struct-a memoriala itsatsi
+  semUp(semid);
+  memcpy((struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)), &shmstruct, sizeof(shmstruct));
+  
+  while(1){
+    
+    if((msgrcv(msgqid, &messageBuffer, sizeof(messageBuffer), getpid(), 0))<0){
       perror("Errorea:\n");
       exit(-1);
     }
-    printf("Received: %s\n", buffer);
-    int portNumber = ntohs(servParams.sin_port);
-    printf("Portua: %d\n", portNumber);
-    
-    //PORT
-    sprintf(buffer, "%s %d", udp_cmd[1], portNumber);
-    printf("BIDALIKO DA:\n%s\n", buffer);
-    if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-      perror("sendto Errorea:\n");
-      exit(-1);
-    }
-    
-    if((recvfrom(udp_socket, buffer, sizeof(buffer), 0, &params, &paramSize))<0){
-      perror("recvfrom Errorea:\n");
-      exit(-1);
-    }
-    printf("Received: %s\n", buffer);
-    
-    //MEZU ILARAKO AGINDUA HARTZEN ETA INTERPRETATZEN
-    msgrcv(msgQID, &msgbuffer, sizeof(msgbuffer), getpid(), 0);
-    printf("MEZU ILARATIK JASOTAKOA:\n%s\n", msgbuffer.mtext);
-    
-    if((char)msgbuffer.mtext[0] == '5'){
-      //BYE
-      sprintf(buffer, "%s", udp_cmd[5]);
-      printf("BIDALIKO DA:\n%s\n", buffer);
-      if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-        perror("sendto Errorea:\n");
-        exit(-1);
-      }
-      return(0);
-    }
-    
-    char *token;
-    token = strtok(msgbuffer.mtext, "<");
-    printf("Token: %s\n", token);
-    int aukera = atoi(token);
-    token = strtok(NULL, ">");
-    printf("Token: %s\n", token);
-    int balioa = atoi(token);
-    
-    //MEMORIAKOA EGUNERATU
-    //TODO: SI QUITAS ESTA LINEA DEJA DE EXPLOTAR Y HACE LOS PRIMEROS 3 DE LA ARIKETA 2 BIEN
-    printf("%s\n", shmptr);
-    
-    //SPEED
-    sprintf(buffer, "%s %d", udp_cmd[aukera], balioa);
-    printf("BIDALIKO DA:\n%s\n", buffer);
-    if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-      perror("sendto Errorea:\n");
-      exit(-1);
-    }
-    
-    //MEZU ILARAKO AGINDUA HARTZEN ETA INTERPRETATZEN
-    msgrcv(msgQID, &msgbuffer, sizeof(msgbuffer), getpid(), 0);
-    printf("MEZU ILARATIK JASOTAKOA:\n%s\n", msgbuffer.mtext);
-    
-    aukera = (int)(msgbuffer.mtext[0] - 48);
-    printf("Aukera: %d\n", aukera);
-    balioa = (int)(((uint8_t)msgbuffer.mtext[4]<<24) + ((uint8_t)msgbuffer.mtext[3]<<16) + ((uint8_t)msgbuffer.mtext[2]<<8) + ((uint8_t)msgbuffer.mtext[1]));
-    printf("AUKERA ETA BALIOA PREST!\n");
-    
-    //MEMORIAKOA EGUNERATU
-    
-    //RPM
-    sprintf(buffer, "%s %d", udp_cmd[aukera], balioa);
-    printf("BIDALIKO DA:\n%s\n", buffer);
-    if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-      perror("sendto Errorea:\n");
-      exit(-1);
-    }
-    
-    //MEZU ILARAKO AGINDUA HARTZEN ETA INTERPRETATZEN
-    msgrcv(msgQID, &msgbuffer, sizeof(msgbuffer), getpid(), 0);
-    printf("MEZU ILARATIK JASOTAKOA:\n%s\n", msgbuffer.mtext);
-    
-    aukera = (int)(msgbuffer.mtext[0] - 48);
-    printf("Aukera: %d\n", aukera);
-    balioa = (int)(((uint8_t)msgbuffer.mtext[4]<<24) + ((uint8_t)msgbuffer.mtext[3]<<16) + ((uint8_t)msgbuffer.mtext[2]<<8) + ((uint8_t)msgbuffer.mtext[1]));
-    printf("AUKERA ETA BALIOA PREST!\n");
-    
-    //MEMORIAKOA EGUNERATU
-    //ARRAY-KO LEHEN STRUCT-A!
-    /*
-    printf("State:%d\n", (int)*shmptr);
-    shmptr = shmptr + 4;
-    printf("State:%s\n", (char*)shmptr);
-    shmptr = shmptr + 16;
-    printf("RPM:%d\n", (int)*shmptr);
-    shmptr = shmptr + 4;
-    printf("PORT:%d\n", (int)*shmptr);
-    shmptr = shmptr + 4;
-    printf("SEM:%d\n", (int)*shmptr);
-    shmptr = shmptr + 4;
-    printf("SEMVAL:%d\n", (int)*shmptr);
-    shmptr = shmptr + 4;
-    printf("PID:%d\n", (int)*shmptr);
-    shmptr = shmptr + 4;
-    */
-    
-    //SEM
-    //Semaforoaren balioa konprobatu behar dugu
-    int semval;
-    semval = semctl(semid, balioa, GETVAL);
-    
-    sprintf(buffer, "%s %d %d", udp_cmd[aukera], balioa, semval);
-    printf("BIDALIKO DA:\n%s\n", buffer);
-    if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-      perror("sendto Errorea:\n");
-      exit(-1);
-    }
-    
-    //BYE
-    sprintf(buffer, "%s", udp_cmd[5]);
-    printf("BIDALIKO DA:\n%s\n", buffer);
-    if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-      perror("sendto Errorea:\n");
-      exit(-1);
-    }
-    
-  }
-  printf("For-etik irtenda!\n");
 
-  return(0);
+    printf("Mezu ilaratik jasotakoa:%s\n", messageBuffer.mtext);
+    char cmd = messageBuffer.mtext[0];
+    switch (cmd){
+      case '2':
+        //SPEED
+        char* token;
+        
+        semDown(semid);
+        
+        token = strtok(messageBuffer.mtext, "<");
+        printf("1: %s\n", token);
+        token = strtok(NULL, ">");
+        printf("2: %s\n", token);
+        
+        //Struct-a memoriatik kopiatu
+        memcpy(&shmstruct, (struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)),sizeof(shmstruct));
+        //Balioa eraldatu
+        shmstruct.speed = atoi(token);
+        //Struct-a memoriala itsatsi
+        memcpy((struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)), &shmstruct, sizeof(shmstruct));
+        semUp(semid);
+        
+        sprintf(bufferOut, "SPEED %d", atoi(token));
+        if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+          perror("Bidaltzean Errorea:\n");
+          exit(-1);
+        }
+        
+        //OK jaso
+        if((recvfrom(udp_socket, bufferIn, sizeof(bufferIn), 0, &rxParams, &sizeofParams))<0){
+          perror("Irakurtzean Errorea:\n");
+          exit(-1);
+        }
+        printf("Erantzuna:\t%s\n", bufferIn);
+        break;
+      case '3':
+      
+        semDown(semid);
+      
+        int rpm;
+        memcpy(&rpm, (char*)(messageBuffer.mtext + 1), sizeof(rpm));
+        printf("Jasotako mezu interpretatua: %c - %d\n", cmd, rpm);
+        
+        //Struct-a memoriatik kopiatu
+        memcpy(&shmstruct, (struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)),sizeof(shmstruct));
+        //Balioa eraldatu
+        shmstruct.rpm = rpm;
+        //Struct-a memoriala itsatsi
+        memcpy((struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)), &shmstruct, sizeof(shmstruct));
+        semUp(semid);
+        
+        sprintf(bufferOut, "RPM %d", rpm);
+        if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+          perror("Bidaltzean Errorea:\n");
+          exit(-1);
+        }
+        break;
+      case '4':
+        //SEM
+        int sem;
+        memcpy(&sem, (char*)(messageBuffer.mtext + 1), sizeof(sem));
+        printf("Jasotako mezu interpretatua: %c - %d\n", cmd, sem);
+        
+        semDown(semid);
+        
+        int semval = 0;
+        if((semval = semctl(semid, sem, GETVAL))<0){
+          perror("Errorea:\n");
+          exit(-1);
+        }
+        
+        //Struct-a memoriatik kopiatu
+        
+        memcpy(&shmstruct, (struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)),sizeof(shmstruct));
+        //Balioa eraldatu
+        shmstruct.sem = sem;
+        shmstruct.semval = semval;
+        //Struct-a memoriala itsatsi
+        memcpy((struct st_data*)(shmptr + aurkituta*sizeof(shmstruct)), &shmstruct, sizeof(shmstruct));
+        semUp(semid);
+        
+        sprintf(bufferOut, "SEM %d %d", sem, semval);
+        if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+          perror("Bidaltzean Errorea:\n");
+          exit(-1);
+        }
+        break;
+        //BYE
+      case '5':
+        sprintf(bufferOut, "BYE");
+        if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+          perror("Bidaltzean Errorea:\n");
+          exit(-1);
+        }
+        return(0);
+    }
+  }
+}
+
+int semUp(semid){
+
+  struct sembuf sb;
+  
+  sb.sem_num = 0;
+  sb.sem_op = 1;
+  sb.sem_flg = 0;
+  
+  if((semop(semid, &sb, 1))<0){
+    perror("SemUp Errorea:\n");
+    exit(-1);
+  }
+
+}
+
+int semDown(semid){
+
+    struct sembuf sb;
+  
+  sb.sem_num = 0;
+  sb.sem_op = -1;
+  sb.sem_flg = 0;
+  
+  if((semop(semid, &sb, 1))<0){
+    perror("SemDown Errorea:\n");
+    exit(-1);
+  }
+
 }
 
 
-//#================================================================ARIEKTA1================================================================#
-int ariketa1(){
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//#========================== ARIKETA 1 ==========================#//
+int ariketa1(){
+  char bufferIn[255];
+  char bufferOut[255];
+  struct sockaddr_in params;
+  struct sockaddr_in rxParams;
   int udp_socket;
-  struct sockaddr_in params, servParams;
-  char buffer[255];
+  
+  if((udp_socket = socket(AF_INET, SOCK_DGRAM, 0))<0){
+    perror("Socket errorea:\n");
+    exit(-1);
+  }
+  
+  //HELLO
+  sprintf(bufferOut, "HELLO %d DEV-%4d", getpid(), getpid());
   
   params.sin_family = AF_INET;
   params.sin_port = htons(SERVER_PORT);
-  params.sin_addr.s_addr = inet_addr(DESTIP);
-
-  if((udp_socket = socket(AF_INET, SOCK_DGRAM, 0))<0){
-    perror("socket Errorea:\n");
+  params.sin_addr.s_addr = inet_addr(SERVER_IP);
+  
+  int sizeofParams = sizeof(params);
+  
+  if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+    perror("Bidaltzean Errorea:\n");
     exit(-1);
   }
   
-  printf("Socket-a sortua!\n");
-  int paramSize = sizeof(params);
-
-  sprintf(buffer, "%s %d %s", udp_cmd[0], getpid(), "DEV-1");
-  printf("BIDALIKO DA:\n%s\n", buffer);
-  if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-    perror("sendto Errorea:\n");
+  //OK jaso
+  if((recvfrom(udp_socket, bufferIn, sizeof(bufferIn), 0, &rxParams, &sizeofParams))<0){
+    perror("Irakurtzean Errorea:\n");
     exit(-1);
   }
-  
-  if((recvfrom(udp_socket, buffer, sizeof(buffer), 0, &params, &paramSize))<0){
-    perror("recvfrom Errorea:\n");
-    exit(-1);
-  }
-  
-  if((getsockname(udp_socket, &servParams, &paramSize))<0){
-    perror("Errorea:\n");
-    exit(-1);
-  }
-  printf("Received: %s\n", buffer);
-  int portNumber = ntohs(servParams.sin_port);
-  printf("Portua: %d\n", portNumber);
+  printf("Erantzuna:\t%s\n", bufferIn);
   
   //PORT
-  sprintf(buffer, "%s %d", udp_cmd[1], portNumber);
-  printf("BIDALIKO DA:\n%s\n", buffer);
-  if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-    perror("sendto Errorea:\n");
+  if((getsockname(udp_socket, &rxParams, &sizeofParams))<0){
+    perror("GetSockName Errorea:\n");
     exit(-1);
   }
   
-  //BYE
-  sprintf(buffer, "%s", udp_cmd[5]);
-  printf("BIDALIKO DA:\n%s\n", buffer);
-  if((sendto(udp_socket, buffer, sizeof(buffer), 0, &params, paramSize))<0){
-    perror("sendto Errorea:\n");
+  printf("Jatorriko portua: %d\n", ntohs(rxParams.sin_port));
+  
+  sprintf(bufferOut, "PORT %d", ntohs(rxParams.sin_port));
+  
+  if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+    perror("Bidaltzean Errorea:\n");
     exit(-1);
   }
   
-  exit(0);
-
-  return(0);
+  //OK jaso
+  if((recvfrom(udp_socket, bufferIn, sizeof(bufferIn), 0, &rxParams, &sizeofParams))<0){
+    perror("Irakurtzean Errorea:\n");
+    exit(-1);
+  }
+  printf("Erantzuna:\t%s\n", bufferIn);
+  
+  usleep(100000);
+  
+  sprintf(bufferOut, "BYE");
+  
+  if((sendto(udp_socket, bufferOut, strlen(bufferOut), 0, &params, sizeofParams))<0){
+    perror("Bidaltzean Errorea:\n");
+    exit(-1);
+  }
 }
-

@@ -147,12 +147,18 @@ int main(int argc, char *argv[])
 
 //#=============================================== 2. ARIKETA ======================================================#
 int ariketa2(){
+
+  // ================================================================================================= //
+  //SEMAFORO PREST
   
   int semid = 0;
   if((semid = semget(CLAVE, MAX_SEM, 0600|IPC_CREAT))<0){
     perror("Semget Errorea:\n");
     exit(-1);
   }
+
+  // ================================================================================================= //
+  //FIFO PREST
   
   char pathname[128];
   sprintf(pathname, "/tmp/fifo-%d", getpid());
@@ -167,6 +173,9 @@ int ariketa2(){
   
   struct msgbuf messageBuffer, receivedMessageBuffer;
 
+  // ================================================================================================= //
+  //MEZU ILARA PREST
+
   char buffer[128];
   int msgqid = 0;
   
@@ -174,6 +183,18 @@ int ariketa2(){
     perror("Msgget errorea:\n");
     exit(-1);
   }
+  
+  // ================================================================================================= //
+  //MEMORIA PARTEKATUA PREST
+  int shmid = 0;
+  if((shmid = shmget(CLAVE, MAX_SEM, 0600|IPC_CREAT))<0){
+    perror("Semget Errorea:\n");
+    exit(-1);
+  }
+  
+  
+  // ================================================================================================= //
+  //ARIKETA
   
   //PREPARING HELLO
   messageBuffer.mtype = CNL_SRV;

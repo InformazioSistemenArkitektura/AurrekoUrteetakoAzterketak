@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <signal.h>
 #include <errno.h>
 #include <stdlib.h>
@@ -11,9 +12,6 @@
 #include <sys/shm.h>
 #include <sys/msg.h>
 #include <sys/signal.h>
-#include <unistd.h>
-#include <stdint.h>
-
 
 #define CLAVE 0x45994891L	// Clave de los recursos. Sustituir por DNI.
 #define TIME 4			// Temporizador de retransmisión
@@ -29,7 +27,7 @@
 		los semáforos 1 y 2
 	El semáforo 1 para poder modificar su valor en comando SEM
 	El semáforo 2 para poder modificar su valor en comando SEM
-	el semáforo 3 para controlar los accesos a la tabla de sesiones en 
+	el semáforo 3 para controlar los accesos a la tabla de sesiones en
 		fase de registro.
 */
 #define MAX_SEM 4	// Número de semáforos en el array
@@ -43,7 +41,6 @@
 
 #define MAX_COMMAND 6
 
-#define CNL_SRV 0x1L
 
 #define OFF_REG_TBL 0	// Desplazamiento de la tabla de sesiones en SHM
 
@@ -64,20 +61,11 @@ struct st_reg {
 #define OFF_DATA_TBL 300	// Desplazamiento de la tabla de datos en SHM
 
 struct st_data {
-	float speed;	// Speed parameter as float value 
-	int rpm;	// Speed parameter as float value 
-	int sem;	// Sem number 
-	int semval;	// Sem value 
-	
-};
+	float speed;	// Speed parameter as float value
+	int rpm;	// Speed parameter as float value
+	int sem;	// Sem number
+	int semval;	// Sem value
 
-//BEHARBADA SEMAFOROENTZAT BEHARKO DUGU!
-union semun {
-   int              val;    /* Value for SETVAL */
-   struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
-   unsigned short  *array;  /* Array for GETALL, SETALL */
-   struct seminfo  *__buf;  /* Buffer for IPC_INFO
-                               (Linux-specific) */
 };
 
 /*************************************************************************/
@@ -94,258 +82,161 @@ struct sigaction sa;
 	sa.sa_flags = 0;
 	return(sigaction(sig,&sa,NULL));
 }
-
-struct msgbuf{
-  long mtype;
-  int pid_client;
-  char mtext[128];
-};
-
-  /*
-  if(()<0){
-    perror("Errorea:\n");
-    exit(-1);
-  }
-  */
-
 /*************************************************************************/
 
-int ariketa2();
-int ariketa1();
+struct mezuilara{
+	long mtype;
+	int pid;
+	char mezua[20];
+};
+
+union semun {
+	int              val;    /* Value for SETVAL */
+	struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
+	unsigned short  *array;  /* Array for GETALL, SETALL */
+	struct seminfo  *__buf;  /* Buffer for IPC_INFO
+								(Linux-specific) */
+};
 
 
 int main(int argc, char *argv[])
-{  
+{
+	int msgid,semid,shmid,pid,fifoid,Amaitua=1,indize;
+	struct mezuilara buffer;
+	char fifo[BUFLEN],bufferfifo[BUFLEN],*info,*mem;
+	struct shmid_ds *buf1;
+	struct msqid_ds *buf2;
+	union semun arg;
+	float speed;
+	int RPM,sem,balio;
+	struct st_reg *memreg;
+	struct st_data *memdata;
 
-  //printf("Sizeof Float: %ld\n", sizeof(float));
-  //Float: 4 Byte
-  //Int: 4 Byte
-  
-  char aukera = 0;
-  printf("Aukeratu ariketa!:\n");
-  __fpurge(stdin);
-  aukera = getchar();
-  printf("Aukera: %c", aukera);
+	pid=getpid();
+	if((msgid=msgget(CLAVE,0600|IPC_CREAT))<0)
+	{
+		perror("msg:");
+	}
+	if((shmid=shmget(CLAVE,SIZE_SHM,0600|IPC_CREAT))<0)
+	{
+		perror("shm:");
+	}
+	if((semid=semget(CLAVE,MAX_SEM,0600|IPC_CREAT))<0)
+	{
+		perror("sem:");
+	}
+	sprintf(fifo,"%s%d",ROOT_NAME_FIFO,pid);
+	mkfifo(fifo,0600|IPC_CREAT);
+	fifoid=open(fifo,O_RDWR);
+	mem=(char*)shmat(shmid,0,0);
+	memreg=(struct st_reg*)mem;
+	memdata=(struct st_data*)(mem+300);
 
-  switch(aukera){
-    case '1':
-      printf("1. Ariketa hasten!\n");
-      ariketa1();
-      break;
-    case '2':
-      printf("2. Ariketa hasten!\n");
-      ariketa2();
-      break;
-    default:
-      exit(-1);
-  }
-  
-  return(0);
-}
 
-//#=============================================== 2. ARIKETA ======================================================#
-int ariketa2(){
-  
-  int semid = 0;
-  if((semid = semget(CLAVE, MAX_SEM, 0600|IPC_CREAT))<0){
-    perror("Semget Errorea:\n");
-    exit(-1);
-  }
-  
-  char pathname[128];
-  sprintf(pathname, "/tmp/fifo-%d", getpid());
-  mkfifo(pathname, 0600|IPC_CREAT);
-  
-  printf("Fifoa sortuta!\n");
-  
-  int fifofd;
-  fifofd = open(pathname, O_RDWR);
-  
-  printf("Fifoa irekita!\n");
-  
-  struct msgbuf messageBuffer, receivedMessageBuffer;
+	
+	printf("\nAriketa1\n");
+	getchar();
 
-  char buffer[128];
-  int msgqid = 0;
-  
-  if((msgqid = msgget(CLAVE, 0600|IPC_CREAT))<0){
-    perror("Msgget errorea:\n");
-    exit(-1);
-  }
-  
-  //PREPARING HELLO
-  messageBuffer.mtype = CNL_SRV;
-  messageBuffer.pid_client = getpid();
-  sprintf(messageBuffer.mtext, "HELLO %d %s", getpid(), "DEV-1");
-  printf("Sending: %s\n", messageBuffer.mtext);
-  
-  //SEND
-  if((msgsnd(msgqid, &messageBuffer, sizeof(messageBuffer), 0))<0){
-    perror("Msgsend Errorea:\n");
-    exit(-1);
-  }
-  
-  //AWAIT OK
-  if((msgrcv(msgqid, &receivedMessageBuffer, sizeof(receivedMessageBuffer), getpid(), 0))<0){
-    perror("Msgrcv Errorea:\n");
-    exit(-1);
-  }
-  printf("PID: %d\n", getpid());
-  //printf("%c, %c, %c\n", 67, 46, 39);
-  printf("Received: %ld %d %s\n",receivedMessageBuffer.mtype, receivedMessageBuffer.pid_client, receivedMessageBuffer.mtext);
-  
-  char cmd = 0;
-  char bigBuf[128];
-  float speed = 0.0F;
-  int rpm = 0;
-  int sem = 0;
-  while(cmd != '5'){
-  
-    if((read(fifofd, &bigBuf, sizeof(bigBuf)))<0){
-      perror("Errorea bigBuf irakurtzen:\n");
-      exit(-1);
-    }
-    printf("Jasotako bigBuf: %s\n", bigBuf);
-    cmd = bigBuf[0];
-    
-    switch(cmd){
-      /*********************/
-      case '2':
-        printf("Jasotako mezu interpretatua: %c - %f\n", cmd, speed);
+	buffer.mtype=0x01L;
+	buffer.pid=pid;
+	sprintf(buffer.mezua,"HELLO %d %s",pid,argv[1]);
+
+	printf("\n%s\n",buffer.mezua);
+	msgsnd(msgid,&buffer,sizeof(buffer),0);
+
+	msgrcv(msgid,&buffer,sizeof(buffer),(long)pid,0);
+
+	buffer.mtype=0x01L;
+	buffer.pid=pid;
+	strcpy(buffer.mezua,"BYE");
+	printf("\n%s\n",buffer.mezua);
+	msgsnd(msgid,&buffer,sizeof(buffer),0);
+
+	printf("\nAriketa2\n");
+	getchar();
+
         
-        memcpy(&speed, (char*)(bigBuf + 1), sizeof(speed));
+
+	buffer.mtype=0x01L;
+	buffer.pid=pid;
+	sprintf(buffer.mezua,"HELLO %d %s",pid,argv[1]);
+
+	msgsnd(msgid,&buffer,sizeof(buffer),0);
+
+	msgrcv(msgid,&buffer,sizeof(buffer),(long)pid,0);
+
+	for(int i=0;i<4;i++)
+	{
+		if(!strcmp(memreg->name,argv[1]))
+		{
+			indize=i;
+		}
+	}
+
+	while(Amaitua)
+	{
+	        bufferfifo[0] = 0;
+	        bufferfifo[1] = 0;
+		if((read(fifoid,&bufferfifo,sizeof(bufferfifo)))<0){
+		  perror("Ezin da fifo-tik irakurri:\n");
+		  exit(-1);
+		}
+		
+		for(int i = 0; i<sizeof(bufferfifo); i++){
+		  bufferfifo[i] = bufferfifo[i+1];
+		}
+		
+		printf("FIFO RECEIVED: %s\n",bufferfifo);
+		
+		if(bufferfifo[0]=='2')
+		{
+		        printf("SPEED:\n");
+			speed=(float)bufferfifo[1];
+			(memdata+indize)->speed=speed;
+			sprintf(buffer.mezua,"SPEED %f",speed);
+		}else{
+			if(bufferfifo[0]=='3')
+			{
+			        printf("RPM:\n");
+				strtok(bufferfifo,"<");
+				info=strtok(NULL,">");
+				RPM=atoi(info);
+				(memdata+indize)->rpm=RPM;
+				sprintf(buffer.mezua,"RPM %d",RPM);
+			}else{
+				if(bufferfifo[0]=='4')
+				{
+				        printf("SEM:\n");
+					sem=(int)bufferfifo[1];
+					balio=semctl(semid,sem,GETVAL,arg);
+					(memdata+indize)->sem=sem;
+					(memdata+indize)->semval=balio;
+					sprintf(buffer.mezua,"RPM %d %d",sem,balio);
+				}else{
+					if(bufferfifo[0]=='5')
+					{
+					        printf("BYE:\n");
+						Amaitua=0;
+						strcpy(buffer.mezua,"BYE");
+					}
+				}
+			}
+		}
+		buffer.mtype=0x01L;
+		buffer.pid=pid;
+		printf("\n%s\n",buffer.mezua);
+		msgsnd(msgid,&buffer,sizeof(buffer),0);
+	}
+
+	printf("\nAriketa3\n");
+	getchar();
         
-        sprintf(messageBuffer.mtext, "SPEED %f", speed);
-        printf("Sending: %s\n", messageBuffer.mtext);
-        break;
-        
-      /*********************/
-      case '3':
-        
-        char *token;
-        token = strtok(bigBuf, "<");
-        printf("Token: %s\n", token);
-        token = strtok(NULL, ">");
-        rpm = atoi(token);
-        printf("Token: %s\n", token);
-        
-        
-        sprintf(messageBuffer.mtext, "RPM %d", rpm);
-        printf("Sending: %s\n", messageBuffer.mtext);
-        break;
-        
-      /*********************/
-      case '4':
-        //sem = (int)(((uint8_t)bigBuf[4]<<24)+((uint8_t)bigBuf[3]<<16)+((uint8_t)bigBuf[2]<<8)+((uint8_t)bigBuf[1]));
-        memcpy(&sem, (char*)(bigBuf + 1), sizeof(sem));
-        printf("Jasotako mezu interpretatua: %c - %d\n", cmd, sem);
-        
-        int semval = 0;
-        if((semval = semctl(semid, sem, GETVAL))<0){
-          perror("GETVAL Errorea:\n");
-          exit(-1);
-        }
-        
-        sprintf(messageBuffer.mtext, "SEM %d %d", sem, semval);
-        printf("Sending: %s\n", messageBuffer.mtext);
-        break;
-        
-      default:
-        sprintf(messageBuffer.mtext, "BYE");
-        printf("Sending: %s\n", messageBuffer.mtext);
-        break;
-    }
-    
-  //SEND
-  if((msgsnd(msgqid, &messageBuffer, sizeof(messageBuffer), 0))<0){
-  perror("Msgsend Errorea:\n");
-  exit(-1);
-  }
-    
-  }
-
-
-  
-  //getchar();
-  //SEND
-  /*if((msgsnd(msgqid, &messageBuffer, sizeof(messageBuffer), 0))<0){
-    perror("Msgsend Errorea:\n");
-    exit(-1);
-  }
-*/
-
-  return(0);
-}
+	close(mem);
+	close(fifoid);
+	shmctl(shmid,IPC_RMID,buf1);
+	msgctl(msgid,IPC_RMID,buf2);
+	semctl(semid,0,IPC_RMID,arg);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//#=============================================== 1. ARIKETA ======================================================#
-
-int ariketa1(){
-  char pathname[128];
-  sprintf(pathname, "/tmp/fifo-%d", getpid());
-  mkfifo(pathname, 0600|IPC_CREAT);
-  
-  printf("Fifoa sortuta!\n");
-  
-  open(pathname, O_RDWR);
-  
-  printf("Fifoa irekita!\n");
-  
-  struct msgbuf messageBuffer, receivedMessageBuffer;
-
-  char buffer[128];
-  int msgqid = 0;
-  
-  if((msgqid = msgget(CLAVE, 0600|IPC_CREAT))<0){
-    perror("Msgget errorea:\n");
-    exit(-1);
-  }
-  
-  //PREPARING HELLO
-  messageBuffer.mtype = CNL_SRV;
-  messageBuffer.pid_client = getpid();
-  sprintf(messageBuffer.mtext, "HELLO %d %s", getpid(), "DEV-1");
-  printf("Sending: %s\n", messageBuffer.mtext);
-  
-  //SEND
-  if((msgsnd(msgqid, &messageBuffer, sizeof(messageBuffer), 0))<0){
-    perror("Msgsend Errorea:\n");
-    exit(-1);
-  }
-  
-  //AWAIT OK
-  if((msgrcv(msgqid, &receivedMessageBuffer, sizeof(receivedMessageBuffer), getpid(), 0))<0){
-    perror("Msgrcv Errorea:\n");
-    exit(-1);
-  }
-  printf("PID: %d\n", getpid());
-  //printf("%c, %c, %c\n", 67, 46, 39);
-  printf("Received: %ld %d %s\n",receivedMessageBuffer.mtype, receivedMessageBuffer.pid_client, receivedMessageBuffer.mtext);
-
-
-  sprintf(messageBuffer.mtext, "BYE");
-  printf("Sending: %s\n", messageBuffer.mtext);
-  
-  //getchar();
-  //SEND
-  if((msgsnd(msgqid, &messageBuffer, sizeof(messageBuffer), 0))<0){
-    perror("Msgsend Errorea:\n");
-    exit(-1);
-  }
-  return(0);
 }
